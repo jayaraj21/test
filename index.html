@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ayush's Design Drawer</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="A birthday collection of 24 cleverly designed physical products, made for Ayush.">
+<meta property="og:title" content="Happy Birthday, Ayush — 24 objects worth stealing ideas from">
+<meta property="og:description" content="A birthday collection of smart product design case studies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: a birthday "gift drawer" — big candy hero, sticky category chips, a wall of sticker-tag cards, a handwritten-style closing letter. */
+:root {
+  --paper: #FFFBF3;
+  --ink: #1D1633;
+  --ink-soft: #5A5170;
+  --line: #E9E0F5;
+  --tomato: #FF5A36;
+  --sun: #FFC530;
+  --cobalt: #3157FF;
+  --bubble: #FF8AC8;
+  --mint: #22CC94;
+  --grape: #8B5CF6;
+  --card: #FFFFFF;
+  --display: "Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
+  --body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 1rem/1.6 var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; line-height: 1.05; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--cobalt); outline-offset: 3px; border-radius: 6px; }
+
+/* ---------- Hero ---------- */
+.hero { position: relative; overflow: hidden; }
+.hero .wrap { padding-block: clamp(40px, 7vw, 88px) clamp(32px, 5vw, 56px); display: grid; gap: 28px; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: center; }
+.eyebrow { font: 500 .78rem/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); display: inline-flex; gap: 10px; align-items: center; }
+.eyebrow .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--tomato); }
+.hero h1 { font-size: clamp(3rem, 9vw, 7.2rem); font-weight: 800; letter-spacing: -.035em; margin-top: 18px; }
+.hero h1 .name { display: inline-block; color: var(--paper); background: var(--cobalt); padding: 0 .18em .04em; border-radius: .18em; transform: rotate(-2.5deg); box-shadow: 6px 6px 0 var(--ink); }
+.hero h1 .wiggle { display: inline-block; }
+.hero p.lede { font-size: clamp(1.08rem, 1.8vw, 1.28rem); max-width: 38ch; color: var(--ink-soft); margin: 22px 0 0; }
+.hero p.lede strong { color: var(--ink); }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.btn { font: 700 1rem/1 var(--body); border: 2.5px solid var(--ink); border-radius: 999px; padding: 14px 22px; cursor: pointer; text-decoration: none; display: inline-flex; gap: 8px; align-items: center; transition: transform .15s ease, box-shadow .15s ease; }
+.btn-primary { background: var(--sun); color: var(--ink); box-shadow: 4px 4px 0 var(--ink); }
+.btn-ghost { background: var(--card); color: var(--ink); }
+.btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
+.btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+
+/* Note card in hero */
+.note {
+  background: var(--card); border: 2.5px solid var(--ink); border-radius: 22px; padding: 26px 26px 22px;
+  box-shadow: 8px 8px 0 var(--bubble); transform: rotate(1.5deg); position: relative;
+}
+.note::before { content: ""; position: absolute; top: -14px; left: 50%; width: 92px; height: 26px; translate: -50% 0; background: color-mix(in srgb, var(--sun) 80%, transparent); border-radius: 4px; transform: rotate(-3deg); }
+.note h2 { font-size: 1.5rem; font-weight: 800; }
+.note p { margin: 10px 0 0; color: var(--ink-soft); }
+.note .sig { font-family: var(--display); font-weight: 600; color: var(--ink); margin-top: 14px; }
+.cake { font: 500 .75rem/1.4 var(--mono); color: var(--ink-soft); margin-top: 16px; padding-top: 14px; border-top: 2px dashed var(--line); display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.cake button { font: inherit; background: none; border: 0; padding: 0; color: var(--cobalt); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+
+/* Ribbon ticker */
+.ribbon { background: var(--ink); color: var(--paper); overflow: hidden; border-block: 2.5px solid var(--ink); }
+.ribbon-track { display: flex; gap: 40px; padding: 12px 0; white-space: nowrap; width: max-content; animation: tick 48s linear infinite; font: 600 1.05rem/1 var(--display); }
+.ribbon-track span { display: inline-flex; gap: 40px; align-items: center; }
+.ribbon-track i { width: 9px; height: 9px; border-radius: 50%; background: var(--sun); display: inline-block; }
+@keyframes tick { to { transform: translateX(-50%); } }
+
+/* ---------- Filter bar ---------- */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+.filters { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 2px solid var(--line); }
+.filters .wrap { padding-block: 12px; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; }
+.filters .wrap::-webkit-scrollbar { display: none; }
+.chip { flex: none; font: 600 .92rem/1 var(--body); border: 2px solid var(--ink); background: var(--card); color: var(--ink); border-radius: 999px; padding: 9px 14px; cursor: pointer; display: inline-flex; gap: 8px; align-items: center; }
+.chip .sw { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--ink); }
+.chip .n { font: 500 .75rem/1 var(--mono); color: var(--ink-soft); }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.chip[aria-pressed="true"] .n { color: var(--sun); }
+
+/* ---------- Section intro ---------- */
+.intro .wrap { padding-block: 48px 8px; display: grid; gap: 16px 40px; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: end; }
+.intro h2 { font-size: clamp(2rem, 4.4vw, 3.2rem); font-weight: 800; letter-spacing: -.02em; }
+.intro p { margin: 0; color: var(--ink-soft); max-width: 52ch; }
+
+/* ---------- Grid of cards ---------- */
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; padding-block: 28px 64px; }
+.card {
+  --c: var(--sun);
+  background: var(--card); border: 2.5px solid var(--ink); border-radius: 22px; overflow: hidden;
+  display: flex; flex-direction: column; min-width: 0;
+  box-shadow: 5px 5px 0 var(--ink); transition: transform .2s ease, box-shadow .2s ease;
+}
+.card:hover { transform: translate(-3px, -3px) rotate(-.4deg); box-shadow: 9px 9px 0 var(--c); }
+.card .art { background: color-mix(in srgb, var(--c) 22%, var(--card)); border-bottom: 2.5px solid var(--ink); aspect-ratio: 16 / 9; max-width: 100%; display: grid; place-items: center; position: relative; }
+.card .art svg { width: 44%; height: auto; max-height: 82%; overflow: visible; }
+.card .no { position: absolute; top: 12px; left: 14px; font: 500 .75rem/1 var(--mono); background: var(--card); border: 2px solid var(--ink); border-radius: 999px; padding: 5px 9px; }
+.card .cat { position: absolute; top: 12px; right: 14px; font: 600 .75rem/1 var(--body); background: var(--c); color: var(--ink); border: 2px solid var(--ink); border-radius: 999px; padding: 5px 10px; }
+.card .body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+.card h3 { font-size: 1.55rem; font-weight: 800; letter-spacing: -.01em; }
+.meta { font: 500 .76rem/1.4 var(--mono); color: var(--ink-soft); letter-spacing: .02em; }
+.card p { margin: 0; font-size: .97rem; }
+.card .smart { font-weight: 500; }
+.card .smart b { font-family: var(--display); font-weight: 800; color: var(--ink); background: linear-gradient(transparent 60%, color-mix(in srgb, var(--c) 55%, transparent) 60%); }
+.steal { margin-top: auto; background: var(--paper); border: 2px dashed var(--ink); border-radius: 14px; padding: 12px 14px; font-size: .95rem; }
+.steal span { display: block; font: 500 .7rem/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--tomato); margin-bottom: 6px; }
+.src { font: 500 .74rem/1 var(--mono); color: var(--ink-soft); text-decoration-color: var(--line); text-underline-offset: 3px; }
+.src:hover { color: var(--cobalt); }
+
+/* SVG glyph defaults */
+.g { fill: none; stroke: var(--ink); stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
+.f { fill: var(--c); }
+.w { fill: var(--card); }
+.k { fill: var(--ink); }
+
+/* ---------- Lessons strip ---------- */
+.lessons { background: var(--cobalt); color: var(--paper); border-block: 2.5px solid var(--ink); }
+.lessons .wrap { padding-block: 56px; }
+.lessons h2 { font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 800; max-width: 20ch; }
+.lessons ol { list-style: none; padding: 0; margin: 28px 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; counter-reset: l; }
+.lessons li { counter-increment: l; background: color-mix(in srgb, var(--paper) 10%, transparent); border: 2px solid color-mix(in srgb, var(--paper) 40%, transparent); border-radius: 18px; padding: 18px; min-width: 0; }
+.lessons li::before { content: counter(l); display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--sun); color: var(--ink); font: 800 .95rem/1 var(--display); margin-bottom: 10px; }
+.lessons li b { display: block; font-family: var(--display); font-size: 1.2rem; margin-bottom: 4px; }
+.lessons li p { margin: 0; opacity: .9; font-size: .95rem; }
+
+/* ---------- Letter ---------- */
+.letter .wrap { padding-block: 72px 56px; display: grid; place-items: center; }
+.paper {
+  max-width: 680px; width: 100%; background: var(--card); border: 2.5px solid var(--ink); border-radius: 24px; padding: clamp(24px, 5vw, 48px);
+  box-shadow: 10px 10px 0 var(--sun); position: relative;
+  background-image: repeating-linear-gradient(transparent 0 33px, var(--line) 33px 35px);
+}
+.paper h2 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; margin-bottom: 18px; }
+.paper p { font-size: 1.08rem; line-height: 35px; margin: 0 0 35px; }
+.paper .sig { font-family: var(--display); font-weight: 800; font-size: 1.5rem; margin: 0; }
+.stamp { position: absolute; top: -24px; right: -14px; width: 92px; height: 92px; border-radius: 50%; background: var(--tomato); color: var(--paper); border: 2.5px solid var(--ink); display: grid; place-items: center; text-align: center; font: 800 .9rem/1.05 var(--display); transform: rotate(12deg); }
+
+footer .wrap { padding-block: 24px 40px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font: 500 .78rem/1.5 var(--mono); color: var(--ink-soft); border-top: 2px solid var(--line); }
+kbd { font: inherit; background: var(--card); border: 1.5px solid var(--ink); border-bottom-width: 3px; border-radius: 6px; padding: 1px 6px; color: var(--ink); }
+
+/* ---------- Confetti + toast ---------- */
+#confetti { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 50; }
+.toast {
+  position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); translate: -50% 0; z-index: 60;
+  background: var(--ink); color: var(--paper); border-radius: 18px; padding: 16px 20px; max-width: min(460px, calc(100% - 32px));
+  box-shadow: 6px 6px 0 var(--bubble); font-size: 1rem; text-align: center;
+}
+.toast b { color: var(--sun); font-family: var(--display); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lessons ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .hero .wrap, .intro .wrap { grid-template-columns: minmax(0, 1fr); }
+  .note { transform: none; }
+}
+@media (max-width: 600px) {
+  .grid, .lessons ol { grid-template-columns: minmax(0, 1fr); }
+  .stamp { right: 4px; width: 78px; height: 78px; font-size: .8rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>A birthday drawer of good ideas</span>
+      <h1>Happy birthday, <span class="name">Ayush</span></h1>
+      <p class="lede">I couldn't fit a whole design museum in a gift box, so I made you this instead: <strong>24 physical products</strong> where one clever decision changed everything. Each one ends with an idea for you to steal.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#collection">Open the drawer ↓</a>
+        <button class="btn btn-ghost" id="party" type="button">Blow the candles</button>
+      </div>
+    </div>
+    <aside class="note" aria-label="Birthday note">
+      <h2>Dear Ayush,</h2>
+      <p>You notice the things most people walk past: the weight of a handle, the click of a lid, the reason a button sits where it does. That eye is rare. This year, may you design something that makes a stranger smile without knowing why.</p>
+      <p class="sig">Happy birthday! — Jayaraj</p>
+      <div class="cake"><span>Psst: type <kbd>ayush</kbd> anywhere</span><button type="button" id="hint">or tap here</button></div>
+    </aside>
+  </div>
+  <div class="ribbon" aria-hidden="true"><div class="ribbon-track" id="ribbon"></div></div>
+</header>
+
+<nav class="filters" aria-label="Filter by category">
+  <div class="wrap" id="chips"></div>
+</nav>
+
+<section class="intro" id="collection">
+  <div class="wrap">
+    <h2>One clever move per object</h2>
+    <p>Each card tells the story of the product, names the single smart decision that made it work, and turns that into a lesson you can use in your own work. Tap a category to narrow it down. Sources are linked on every card.</p>
+  </div>
+</section>
+
+<main class="wrap">
+  <div class="grid" id="grid"></div>
+</main>
+
+<section class="lessons" aria-labelledby="lessons-h">
+  <div class="wrap">
+    <h2 id="lessons-h">Six patterns hiding in this drawer</h2>
+    <ol>
+      <li><b>Borrow a gesture people already know</b><p>Muji's pull cord, the FlyEase heel kick, Nest's dial. Reuse a motion from somewhere else and nobody needs a manual.</p></li>
+      <li><b>Design for the edge, win the middle</b><p>OXO started with arthritic hands. The Xbox controller started with gamers who play with their feet. Everyone benefits.</p></li>
+      <li><b>Move the heavy part</b><p>Dyson put the motor in the handle. Fellow counterweighted the kettle. Where the mass sits decides how a thing feels.</p></li>
+      <li><b>Make the constraint the feature</b><p>Playdate's 1-bit screen, the Travel Tripod's water-bottle width, Balmuda's 5 cc of water. Limits make products memorable.</p></li>
+      <li><b>Let the object store itself</b><p>The Pencil charges where it parks. The Always Pan holds its own spatula. Good design includes where the thing lives.</p></li>
+      <li><b>Show the inside</b><p>Freitag's scuffed tarps, Fairphone's screws, Nothing's lit-up back. Honesty about how a thing is made can be the whole brand.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="letter" id="letter">
+  <div class="wrap">
+    <article class="paper">
+      <div class="stamp" aria-hidden="true">Made<br>for<br>Ayush</div>
+      <h2>One more thing</h2>
+      <p>None of these products started as a big idea. They started as a small annoyance someone refused to ignore: a peeler that hurt, a thermostat that was ugly, a bag that got wet in the rain.</p>
+      <p>You're good at noticing those small annoyances. Keep a list. Keep sketching. One day a product of yours belongs in a drawer like this, and I get to say I knew you before.</p>
+      <p>Have a brilliant birthday, and a year full of good problems to solve.</p>
+      <p class="sig">— Jayaraj</p>
+    </article>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Made with care for Ayush's birthday · 24 objects · sources linked on each card</span>
+    <span>Type <kbd>ayush</kbd> for a surprise</span>
+  </div>
+</footer>
+
+<canvas id="confetti" aria-hidden="true"></canvas>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+const CATS = {
+  kitchen: { label: "Kitchen", color: "var(--tomato)" },
+  home:    { label: "Home",    color: "var(--sun)" },
+  play:    { label: "Play & sound", color: "var(--grape)" },
+  carry:   { label: "Carry & move", color: "var(--mint)" },
+  pocket:  { label: "Pocket tech", color: "var(--cobalt)" },
+  everyone:{ label: "Design for everyone", color: "var(--bubble)" }
+};
+
+// Simple line drawings, viewBox 0 0 120 100
+const ART = {
+  peeler: `<rect class="g f" x="14" y="38" width="62" height="26" rx="13"/><path class="g" d="M28 44v14M36 44v14M44 44v14M52 44v14"/><path class="g w" d="M76 44h10l22-6v26l-22-6H76z"/><path class="g" d="M90 46l14-3M90 56l14 3"/>`,
+  toaster: `<rect class="g f" x="16" y="26" width="80" height="58" rx="10"/><rect class="g w" x="26" y="38" width="46" height="34" rx="4"/><path class="g" d="M32 62c8-4 26-4 34 0"/><circle class="g w" cx="84" cy="48" r="5"/><path class="g w" d="M90 12l10 0-2 12h-6z"/><path class="g" d="M95 6v-2"/>`,
+  kettle: `<path class="g f" d="M30 84h52l-4-46c-1-10-10-16-22-16s-21 6-22 16z"/><path class="g" d="M34 46C14 46 10 28 4 22"/><path class="g" d="M78 34c18 0 22 12 22 22s-6 18-20 18"/><rect class="g k" x="26" y="84" width="60" height="8" rx="3"/><circle class="g w" cx="56" cy="18" r="4"/>`,
+  mug: `<path class="g f" d="M24 22h56v52a12 12 0 0 1-12 12H36a12 12 0 0 1-12-12z"/><path class="g" d="M80 36h8a10 10 0 0 1 0 20h-8"/><path class="g" d="M24 78h56"/><circle class="k" cx="52" cy="82" r="2.5"/><path class="g" d="M40 8c-4 4 4 6 0 10M56 8c-4 4 4 6 0 10M72 8c-4 4 4 6 0 10"/>`,
+  pan: `<ellipse class="g f" cx="46" cy="58" rx="36" ry="22"/><ellipse class="g w" cx="46" cy="52" rx="28" ry="13"/><path class="g" d="M82 58l30-8"/><path class="g w" d="M58 14l-14 40 6 2 14-40c2-6-4-8-6-2z"/>`,
+  cd: `<rect class="g f" x="22" y="10" width="64" height="64" rx="8"/><circle class="g w" cx="54" cy="42" r="22"/><circle class="g k" cx="54" cy="42" r="4"/><path class="g" d="M54 74v14"/><rect class="g w" x="49" y="88" width="10" height="8" rx="3"/>`,
+  nest: `<circle class="g f" cx="60" cy="50" r="40"/><circle class="g k" cx="60" cy="50" r="30"/><text x="60" y="60" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="26" fill="#FFC530">21°</text>`,
+  lamp: `<path class="g f" d="M36 14h48l10 34H26z"/><rect class="g w" x="40" y="48" width="40" height="40" rx="8"/><path class="g" d="M48 58h24M48 66h24M48 74h24"/><path class="g" d="M98 26c6 6 6 16 0 22M106 20c10 10 10 24 0 34"/>`,
+  dryer: `<circle class="g f" cx="40" cy="36" r="26"/><circle class="g w" cx="40" cy="36" r="12"/><path class="g f" d="M58 52l14 40h-14l-10-34"/><path class="g" d="M66 36h16M70 26h18M70 46h18"/>`,
+  op1: `<rect class="g f" x="6" y="30" width="108" height="44" rx="6"/><rect class="g k" x="14" y="38" width="22" height="14" rx="2"/><circle class="g w" cx="46" cy="45" r="5"/><circle class="g w" cx="62" cy="45" r="5"/><circle class="g w" cx="78" cy="45" r="5"/><circle class="g w" cx="94" cy="45" r="5"/><path class="g" d="M14 62h92M26 58v10M38 58v10M50 58v10M62 58v10M74 58v10M86 58v10M98 58v10"/>`,
+  playdate: `<rect class="g f" x="22" y="14" width="66" height="74" rx="8"/><rect class="g w" x="30" y="22" width="50" height="34" rx="3"/><path class="g" d="M38 70h12M44 64v12"/><circle class="g k" cx="68" cy="72" r="4"/><circle class="g k" cx="78" cy="66" r="4"/><path class="g" d="M88 32h14"/><rect class="g w" x="100" y="26" width="6" height="22" rx="3"/>`,
+  switch: `<rect class="g w" x="30" y="24" width="60" height="52" rx="4"/><path class="g" d="M30 24h-10a12 12 0 0 0-12 12v28a12 12 0 0 0 12 12h10z" fill="#3157FF"/><path class="g" d="M90 24h10a12 12 0 0 1 12 12v28a12 12 0 0 1-12 12H90z" fill="#FF5A36"/><circle class="k" cx="19" cy="40" r="3.5"/><circle class="k" cx="101" cy="58" r="3.5"/>`,
+  pocketgame: `<rect class="g f" x="30" y="6" width="60" height="90" rx="8"/><rect class="g k" x="38" y="14" width="44" height="40" rx="3"/><path class="g" d="M42 72h14M49 65v14"/><circle class="g w" cx="70" cy="74" r="4"/><circle class="g w" cx="80" cy="66" r="4"/>`,
+  tripod: `<rect class="g f" x="48" y="8" width="24" height="16" rx="4"/><path class="g" d="M60 24v18"/><path class="g" d="M60 42L28 94M60 42l32 52M60 42v52"/><circle class="g w" cx="60" cy="42" r="5"/>`,
+  bag: `<path class="g" d="M30 40C30 8 90 8 90 40"/><rect class="g f" x="14" y="38" width="92" height="52" rx="8"/><path class="g w" d="M14 46h92v16c-30 8-62 8-92 0z"/><text x="60" y="84" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="500" font-size="11" fill="#1D1633">TARP</text>`,
+  shoe: `<path class="g f" d="M10 66c0-20 10-30 26-30 6 10 20 16 34 16h18c14 0 22 6 22 14v8H10z"/><path class="g k" d="M10 74h100v8H10z"/><circle class="g w" cx="42" cy="78" r="6"/><path class="g" d="M36 36l-4-12 14 6"/>`,
+  airpods: `<rect class="g w" x="26" y="20" width="68" height="64" rx="18"/><path class="g" d="M26 42h68"/><path class="g f" d="M26 42v-4a18 18 0 0 1 18-18h32a18 18 0 0 1 18 18v4z"/><circle class="k" cx="60" cy="56" r="2.5"/>`,
+  airtag: `<circle class="g w" cx="60" cy="50" r="38"/><circle class="g f" cx="60" cy="50" r="26"/><path class="g" d="M48 50a12 12 0 0 1 24 0M42 50a18 18 0 0 1 36 0" opacity=".7"/>`,
+  pencil: `<path class="g f" d="M12 40h80l18 10-18 10H12z"/><path class="g" d="M12 46h80"/><rect class="g w" x="30" y="72" width="60" height="20" rx="4"/><path class="g" d="M38 72v-6h44v6"/><path class="g" d="M98 50h12"/>`,
+  phone: `<rect class="g k" x="34" y="6" width="52" height="90" rx="10"/><path class="g" d="M52 24a10 10 0 1 1 0 .1" stroke="#FFFBF3"/><path d="M48 50a14 14 0 1 0 28 0a14 14 0 1 0-28 0" fill="none" stroke="#FFC530" stroke-width="4"/><path d="M58 82h6M74 18v10" stroke="#FFC530" stroke-width="4" stroke-linecap="round"/>`,
+  fairphone: `<rect class="g w" x="30" y="6" width="60" height="90" rx="8"/><rect class="g f" x="38" y="14" width="44" height="26" rx="3"/><rect class="g f" x="38" y="46" width="20" height="20" rx="3"/><rect class="g f" x="62" y="46" width="20" height="20" rx="3"/><rect class="g f" x="38" y="72" width="44" height="16" rx="3"/><circle class="k" cx="34" cy="10" r="2"/><circle class="k" cx="86" cy="10" r="2"/><circle class="k" cx="34" cy="92" r="2"/><circle class="k" cx="86" cy="92" r="2"/>`,
+  xac: `<rect class="g w" x="6" y="30" width="108" height="46" rx="10"/><circle class="g f" cx="34" cy="53" r="15"/><circle class="g f" cx="72" cy="53" r="15"/><path class="g" d="M94 46h10M99 41v10"/><path class="g" d="M14 76v10M24 76v10M34 76v10M44 76v10M54 76v10" opacity=".6"/>`,
+  straw: `<rect class="g f" x="50" y="16" width="20" height="72" rx="10" transform="rotate(25 60 52)"/><path class="g" d="M46 30l20 9M40 46l20 9M34 62l20 9" opacity=".6"/><path class="g" d="M78 10c4 6 4 10 0 14"/><path class="g w" d="M24 82c0-6 6-12 6-12s6 6 6 12a6 6 0 0 1-12 0z"/>`,
+  embrace: `<path class="g f" d="M20 50c0-22 18-34 40-34s40 12 40 34-18 40-40 40-40-18-40-40z"/><circle class="g w" cx="60" cy="38" r="12"/><path class="g w" d="M38 58h44v18H38z"/><path class="g" d="M44 67h32" stroke-dasharray="4 5"/>`
+};
+
+const ITEMS = [
+  { id:"oxo", art:"peeler", cat:"kitchen", name:"OXO Good Grips Peeler", maker:"Sam Farber & Smart Design", year:1990,
+    story:"Sam Farber watched his wife Betsey, who had arthritis in her hands, struggle with a thin metal peeler. He worked with Smart Design to rethink the handle from scratch.",
+    smart:"A <b>fat, soft oval handle</b> with fin-like grooves that grips even wet hands. It cost three times a normal peeler and sold anyway.",
+    lesson:"Design for the hardest hand first. If it works for someone with arthritis, it feels great for everyone else.",
+    src:"https://www.cooperhewitt.org/2015/12/17/getting-a-grip-on-user-inspired-design/" },
+  { id:"balmuda", art:"toaster", cat:"kitchen", name:"BALMUDA The Toaster", maker:"Balmuda (Gen Terao)", year:2015,
+    story:"The team grilled bread at a rainy company barbecue and it came out unusually good. Chasing that taste, they realised the moisture in the air was the missing ingredient.",
+    smart:"A tiny cup takes <b>5 cc of water</b>. Steam coats the bread so the outside crisps while the inside stays soft.",
+    lesson:"Recreate a feeling, not a spec sheet. They designed backwards from one perfect slice of toast.",
+    src:"https://www.core77.com/posts/54809/Why-Does-This-Toaster-Have-You-Pour-Water-Into-It" },
+  { id:"stagg", art:"kettle", cat:"kitchen", name:"Fellow Stagg EKG", maker:"Fellow, designed with Branch", year:2017,
+    story:"Pour-over coffee needs a slow, steady stream. Most kettles make that hard, and most electric ones look like appliances you hide.",
+    smart:"A <b>counterbalanced handle</b> puts the weight behind your wrist, and a narrow gooseneck spout gives you a thin, controllable pour.",
+    lesson:"Shape the weight, not just the outline. Balance is something people feel before they notice it.",
+    src:"https://www.coffeereview.com/equipment-review-fellow-stagg-ekg-electric-kettle/" },
+  { id:"ember", art:"mug", cat:"kitchen", name:"Ember Mug", maker:"Clay Alexander", year:2016,
+    story:"An inventor with a background in LED lighting wanted his coffee to stay at the right temperature. The first prototype was a Zojirushi mug stuffed with electronics.",
+    smart:"It <b>looks like a plain mug</b>. The battery and heater hide in the base, and a coaster is the charger.",
+    lesson:"Hide the technology inside a familiar object. People adopt new things faster when they already know how to hold them.",
+    src:"https://embertech.com/pages/about-the-founder" },
+  { id:"always", art:"pan", cat:"kitchen", name:"Our Place Always Pan", maker:"Our Place (Shiza Shahid)", year:2019,
+    story:"Small kitchens fill up with pans that each do one job. Our Place set out to make one pan that covers most of them.",
+    smart:"A deep pan with a steamer basket and lid, plus a wooden spatula with a <b>built-in notch that rests on the handle</b>. Everything nests together.",
+    lesson:"Design the accessories and where they live, not only the hero object.",
+    src:"https://globaldesignnews.com/shiza-shahid-brings-a-fresh-perspective-to-cookware-for-the-contemporary-kitchen-with-the-always-pan-that-replaces-eight-kitchen-pieces/" },
+
+  { id:"muji", art:"cd", cat:"home", name:"MUJI Wall-Mounted CD Player", maker:"Naoto Fukasawa for MUJI", year:1999,
+    story:"Fukasawa noticed that a spinning CD looks like the blades of a kitchen extractor fan. So he built a CD player that hangs on the wall like one.",
+    smart:"You turn it on by <b>pulling a cord</b>, the same gesture as the fan. Nobody needs to read instructions. MoMA added it to its collection.",
+    lesson:"Borrow a behaviour people already do without thinking. Fukasawa calls this designing \"without thought\".",
+    src:"https://collections.vam.ac.uk/item/O1227135/cd-player-fukasawa-naoto/" },
+  { id:"nest", art:"nest", cat:"home", name:"Nest Learning Thermostat", maker:"Tony Fadell & Matt Rogers", year:2011,
+    story:"While building a house near Lake Tahoe, the creator of the iPod found every thermostat ugly and confusing. So he started a company to make a better one.",
+    smart:"One <b>turning ring and a round screen</b>. You just turn it up or down, and after about a week it learns your schedule.",
+    lesson:"Take a boring, ignored product category seriously. Low expectations leave lots of room to surprise people.",
+    src:"https://spectrum.ieee.org/the-consumer-electronics-hall-of-fame-nest-thermostat" },
+  { id:"symfonisk", art:"lamp", cat:"home", name:"IKEA SYMFONISK Lamp Speaker", maker:"IKEA × Sonos", year:2019,
+    story:"Speakers are black boxes that clutter rooms. IKEA brought the furniture thinking, and Sonos brought the sound.",
+    smart:"The speaker <b>is the lamp base</b>. One object, one cable, one spot on the side table, and it doesn't look like tech.",
+    lesson:"Merge two objects that already sit in the same place. Fewer things in a room is a feature.",
+    src:"https://www.dezeen.com/2019/04/09/ikea-sonos-symfonisk-speakers/" },
+  { id:"supersonic", art:"dryer", cat:"home", name:"Dyson Supersonic", maker:"Dyson", year:2016,
+    story:"Hair dryers were heavy at the head and loud. Dyson spent four years and built around 600 prototypes to rethink one.",
+    smart:"A tiny motor moved <b>into the handle</b>, so the weight sits in your hand. The air comes out of a ring with a hole in the middle.",
+    lesson:"Ask where the heaviest part should live. Moving one component can change the whole shape.",
+    src:"https://newatlas.com/dyson-supersonic-hair-dryer/43019/" },
+
+  { id:"op1", art:"op1", cat:"play", name:"Teenage Engineering OP-1", maker:"Teenage Engineering", year:2011,
+    story:"A synthesizer and recorder the size of a keyboard tray, made from one machined piece of aluminium.",
+    smart:"Recording works like <b>a virtual 4-track tape</b> with spinning reels on screen. The odd limits make you finish songs instead of fiddling.",
+    lesson:"Use a metaphor people can see. Personality and humour in an interface make people want to use it.",
+    src:"https://cdm.link/teenage-engineerings-op-1-instrument-hands-on-videos-why-its-different/" },
+  { id:"playdate", art:"playdate", cat:"play", name:"Playdate", maker:"Panic, designed with Teenage Engineering", year:2022,
+    story:"A software company wanted to make a small yellow handheld console. A design firm tried to talk them out of it, so they emailed Teenage Engineering instead.",
+    smart:"A <b>fold-out crank</b> on the side is a real game control, not a charger. Games come with a black-and-white screen and no backlight.",
+    lesson:"One strange, delightful input can be a whole product's identity.",
+    src:"https://domusweb.it/en/design/gallery/2022/06/24/playdate-a-game-boy-designed-for-the-netflix-era.html" },
+  { id:"switch", art:"switch", cat:"play", name:"Nintendo Switch", maker:"Nintendo", year:2017,
+    story:"Wii players asked for smaller controllers they could hold or strap on. Nintendo designed the Joy-Con to be useful well beyond a normal gamepad.",
+    smart:"The controllers <b>slide off the sides</b>. One device becomes a TV console, a handheld, or two controllers for a friend.",
+    lesson:"Design the moment of sharing. Splitting one object into two made multiplayer happen anywhere.",
+    src:"https://www.gamedeveloper.com/game-platforms/the-nintendo-switch-joy-cons-and-even-labo-are-the-result-of-wii-era-feedback" },
+  { id:"pocket", art:"pocketgame", cat:"play", name:"Analogue Pocket", maker:"Analogue", year:2021,
+    story:"Old Game Boy cartridges deserve better than blurry emulators. Analogue rebuilt the original hardware in a reprogrammable chip.",
+    smart:"A <b>615 ppi screen</b>, ten times the original Game Boy's resolution, that plays real cartridges natively.",
+    lesson:"Respect what people already own. A new product can make old things feel new again.",
+    src:"https://techcrunch.com/2021/11/22/analogues-pocket-retro-gaming-handheld-console-ships-on-december-14/" },
+
+  { id:"tripod", art:"tripod", cat:"carry", name:"Peak Design Travel Tripod", maker:"Peak Design", year:2019,
+    story:"Travel photographers leave tripods at home because they're bulky. Peak Design reshaped every part to remove dead space.",
+    smart:"The legs fold tightly around the centre column so the whole thing is about <b>the width of a water bottle</b> and fits a bottle pocket.",
+    lesson:"Pick a real-world size target. \"Fits where a water bottle fits\" is a clearer brief than \"make it small\".",
+    src:"https://petapixel.com/2019/05/21/peak-design-made-a-travel-tripod-with-game-changing-compactness" },
+  { id:"freitag", art:"bag", cat:"carry", name:"FREITAG F13 Top Cat", maker:"Markus & Daniel Freitag", year:1993,
+    story:"Two brothers in Zurich needed a waterproof messenger bag. They watched trucks roll past their flat and saw the answer on the trucks.",
+    smart:"Made from <b>old truck tarps</b>, bike inner tubes and car seatbelts. Every bag is cut from a different tarp, so no two look alike.",
+    lesson:"Your material choice can be your story. Waste became the most recognisable part of the brand.",
+    src:"https://production-gcp.moma.org/explore/inside_out/2011/05/19/the-freitag-top-cat-bag-environmentally-responsible-and-good-looking-too/" },
+  { id:"flyease", art:"shoe", cat:"carry", name:"Nike GO FlyEase", maker:"Nike (Tobie Hatfield & team)", year:2021,
+    story:"Putting on shoes is hard for many people with disabilities, and annoying for everyone carrying something or in a rush.",
+    smart:"A <b>hinged sole</b> stays open until you step in, then snaps shut. To take it off, push the heel down with your other foot.",
+    lesson:"Copy what people already do. Everyone kicks shoes off at the heel; Nike designed for that move.",
+    src:"https://www.dezeen.com/2021/02/01/nike-go-flyease-trainer-hands-free/" },
+
+  { id:"airpods", art:"airpods", cat:"pocket", name:"AirPods & their case", maker:"Apple", year:2016,
+    story:"Wireless earbuds used to mean pairing menus and lost buds. Apple made the case the centre of the product.",
+    smart:"The case is the charger, the storage and the pairing step. <b>Open the lid near your phone</b> and it connects. The magnetic snap is fun to fiddle with.",
+    lesson:"The container is part of the experience. Small sounds and snaps build attachment.",
+    src:"https://www.apple.com/newsroom/2016/09/apple-reinvents-the-wireless-headphones-with-airpods/" },
+  { id:"airtag", art:"airtag", cat:"pocket", name:"AirTag", maker:"Apple", year:2021,
+    story:"Item trackers need their own network of receivers to work. Apple already had one: other people's iPhones nearby.",
+    smart:"A tiny disc with <b>a coin battery you can swap yourself</b>, found by nearby Apple devices without anyone noticing.",
+    lesson:"Use the system around a product. The smartest part of AirTag isn't inside the AirTag.",
+    src:"https://www.apple.com/newsroom/2021/04/apple-introduces-airtag/" },
+  { id:"pencil", art:"pencil", cat:"pocket", name:"Apple Pencil (2nd gen)", maker:"Apple", year:2018,
+    story:"The first Pencil charged by plugging into the iPad's port, sticking out awkwardly, and it rolled off tables.",
+    smart:"One <b>flat side</b>: it stops rolling, and it snaps magnetically to the iPad where it charges and pairs.",
+    lesson:"Where something rests should do work. Storage, charging and pairing happen in one gesture.",
+    src:"https://www.apple.com/newsroom/2018/10/new-ipad-pro-with-all-screen-design-is-most-advanced-powerful-ipad-ever/" },
+  { id:"nothing", art:"phone", cat:"pocket", name:"Nothing Phone (1)", maker:"Nothing", year:2022,
+    story:"Most phones look identical from the back. Nothing wanted a phone you'd recognise from across the room.",
+    smart:"The <b>Glyph lights</b> on the back flash custom patterns for calls and alerts, so you can leave the phone face down and still know who's calling.",
+    lesson:"Give an unused surface a job. The back of a phone was dead space.",
+    src:"https://www.macrumors.com/2022/07/13/nothing-announces-phone-1/" },
+  { id:"fairphone", art:"fairphone", cat:"pocket", name:"Fairphone 5", maker:"Fairphone", year:2023,
+    story:"Phones get thrown away when a battery or a port dies. Fairphone designs phones to be fixed by their owners.",
+    smart:"Ten parts, including the screen, battery and cameras, swap out with <b>a standard screwdriver</b>. iFixit gave it 10 out of 10.",
+    lesson:"Design the second life of a product. Repair can be a feature people choose you for.",
+    src:"https://www.fairphone.com/wp-content/uploads/2023/12/Press_Release_Fairphone5_iFixit.pdf" },
+
+  { id:"xac", art:"xac", cat:"everyone", name:"Xbox Adaptive Controller", maker:"Microsoft", year:2018,
+    story:"Standard controllers assume two hands and ten fingers. Microsoft co-designed this one with gamers with limited mobility.",
+    smart:"Two huge buttons and a row of ports to plug in switches you can press with a foot, elbow or chin. Even <b>the box opens with one hand</b> using loops.",
+    lesson:"Accessibility goes all the way to the unboxing. The first experience is opening the package.",
+    src:"https://www.designweek.co.uk/issues/23-29-july-2018/microsoft-has-rethought-its-xbox-packaging-for-disabled-gamers" },
+  { id:"lifestraw", art:"straw", cat:"everyone", name:"LifeStraw", maker:"Vestergaard", year:2005,
+    story:"Millions of people only have access to unsafe water. The idea grew out of filters Vestergaard made with the Carter Center to fight Guinea worm.",
+    smart:"A plain plastic tube with <b>no batteries or moving parts</b>. Your own sip pushes water through a fine filter that blocks bacteria and parasites.",
+    lesson:"Remove everything that can break. In hard places, simple beats clever.",
+    src:"https://collections.vam.ac.uk/item/O1343888" },
+  { id:"embrace", art:"embrace", cat:"everyone", name:"Embrace Infant Warmer", maker:"Jane Chen, Rahul Panicker, Linus Liang & team", year:2008,
+    story:"In a Stanford class on designing for extreme affordability, a team learned that premature babies in rural areas die from cold while incubators cost thousands and need steady power.",
+    smart:"A small sleeping bag with a <b>wax pouch that melts at body temperature</b> and stays warm for hours without electricity.",
+    lesson:"Go see the real context. Visiting rural clinics turned a cheap incubator idea into something very different.",
+    src:"https://stanfordmag.org/contents/baby-it-s-cold-outside" }
+];
+
+const $ = (s) => document.querySelector(s);
+const grid = $("#grid"), chips = $("#chips");
+let active = "all";
+
+function card(it, i) {
+  const c = CATS[it.cat];
+  return `<article class="card" data-cat="${it.cat}" style="--c:${c.color}">
+    <div class="art">
+      <span class="no">No. ${String(i + 1).padStart(2, "0")}</span>
+      <span class="cat">${c.label}</span>
+      <svg viewBox="0 0 120 100" role="img" aria-label="Drawing of ${it.name}">${ART[it.art]}</svg>
+    </div>
+    <div class="body">
+      <div>
+        <h3>${it.name}</h3>
+        <div class="meta">${it.year} · ${it.maker}</div>
+      </div>
+      <p>${it.story}</p>
+      <p class="smart">${it.smart}</p>
+      <div class="steal"><span>Steal this, Ayush</span>${it.lesson}</div>
+      <a class="src" href="${it.src}" target="_blank" rel="noopener">Read the source ↗</a>
+    </div>
+  </article>`;
+}
+
+function render() {
+  const list = active === "all" ? ITEMS : ITEMS.filter((x) => x.cat === active);
+  grid.innerHTML = list.map((it) => card(it, ITEMS.indexOf(it))).join("");
+}
+
+function renderChips() {
+  const counts = {};
+  ITEMS.forEach((x) => (counts[x.cat] = (counts[x.cat] || 0) + 1));
+  const all = `<button class="chip" type="button" data-cat="all" aria-pressed="${active === "all"}">Everything <span class="n">${ITEMS.length}</span></button>`;
+  chips.innerHTML = all + Object.entries(CATS).map(([k, c]) =>
+    `<button class="chip" type="button" data-cat="${k}" aria-pressed="${active === k}"><span class="sw" style="background:${c.color}"></span>${c.label} <span class="n">${counts[k]}</span></button>`
+  ).join("");
+}
+
+chips.addEventListener("click", (e) => {
+  const b = e.target.closest(".chip");
+  if (!b) return;
+  active = b.dataset.cat;
+  renderChips(); render();
+});
+
+// Ribbon of product names
+const names = ITEMS.map((x) => `${x.name}<i></i>`).join("");
+$("#ribbon").innerHTML = `<span>${names}</span><span>${names}</span>`;
+
+renderChips(); render();
+
+// ---------- Confetti ----------
+const cv = $("#confetti"), ctx = cv.getContext("2d");
+const COLORS = ["#FF5A36", "#FFC530", "#3157FF", "#FF8AC8", "#22CC94", "#8B5CF6"];
+let bits = [], raf = null;
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+function size() { cv.width = innerWidth * devicePixelRatio; cv.height = innerHeight * devicePixelRatio; }
+addEventListener("resize", size); size();
+function burst(n = 160) {
+  if (reduce) return;
+  for (let i = 0; i < n; i++) {
+    bits.push({
+      x: innerWidth * (0.2 + Math.random() * 0.6), y: innerHeight * 0.35,
+      vx: (Math.random() - 0.5) * 14, vy: -Math.random() * 14 - 4,
+      r: Math.random() * Math.PI, vr: (Math.random() - 0.5) * 0.3,
+      w: 6 + Math.random() * 8, h: 4 + Math.random() * 6,
+      c: COLORS[(Math.random() * COLORS.length) | 0], life: 0
+    });
+  }
+  if (!raf) loop();
+}
+function loop() {
+  const d = devicePixelRatio;
+  ctx.clearRect(0, 0, cv.width, cv.height);
+  bits = bits.filter((b) => b.y < innerHeight + 40 && b.life < 400);
+  bits.forEach((b) => {
+    b.vy += 0.32; b.vx *= 0.99; b.x += b.vx; b.y += b.vy; b.r += b.vr; b.life++;
+    ctx.save(); ctx.translate(b.x * d, b.y * d); ctx.rotate(b.r);
+    ctx.fillStyle = b.c; ctx.fillRect(-b.w * d / 2, -b.h * d / 2, b.w * d, b.h * d); ctx.restore();
+  });
+  raf = bits.length ? requestAnimationFrame(loop) : null;
+  if (!raf) ctx.clearRect(0, 0, cv.width, cv.height);
+}
+
+let toastTimer;
+function toast(html) {
+  const t = $("#toast");
+  t.innerHTML = html; t.hidden = false;
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => (t.hidden = true), 6000);
+}
+
+$("#party").addEventListener("click", () => {
+  burst(200);
+  toast("🎂 Make a wish, <b>Ayush</b>. Then go design something great.");
+});
+
+// Easter egg: type "ayush"
+const SECRET = [
+  "Secret unlocked: <b>Ayush</b> is officially product no. 25. Limited edition, no returns.",
+  "Fun fact: the best designers are <b>curious first</b>. You've always been that.",
+  "Still here? Go eat cake, <b>Ayush</b>. The products will wait."
+];
+let buf = "", hits = 0;
+function egg() {
+  burst(260);
+  toast(SECRET[hits % SECRET.length]); hits++;
+}
+addEventListener("keydown", (e) => {
+  if (e.key.length !== 1) return;
+  buf = (buf + e.key.toLowerCase()).slice(-5);
+  if (buf === "ayush") { egg(); buf = ""; }
+});
+$("#hint").addEventListener("click", egg);
+
+// Small welcome burst
+setTimeout(() => burst(120), 500);
+</script>
+</body>
+</html>
