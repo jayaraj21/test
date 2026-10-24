@@ -509,7 +509,10 @@ const ITEMS = [
 
 // Real photos from Wikimedia Commons (freely licensed). Each links to its file page,
 // which lists the photographer and licence. Missing photos fall back to the drawing.
-const PHOTOS = {
+// The Vercel build (scripts/build.mjs) downloads these photos into the site and
+// fills LOCAL_PHOTOS below. Without that build, photos load straight from Commons.
+const LOCAL_PHOTOS = /*LOCAL-PHOTOS*/{}/*END-LOCAL-PHOTOS*/;
+const PHOTOS = /*PHOTOS*/{
   balmuda:   ["Balmuda The Toaster (26332066192).jpg", "バルミューダのトースター 2015 (23398421799).jpg"],
   muji:      ["Muji NYC inside CD players.jpg"],
   nest:      ["NestLearningThermostat2.JPG", "Nest learning thermostat in living room.jpg", "Nest Thermostat 3rd Generation (Creative Commons) (45096474951).jpg"],
@@ -527,11 +530,16 @@ const PHOTOS = {
   fairphone: ["Fairphone 5 Modularity.jpg", "Fairphone 5 front.jpg", "Fairphone 5 - unboxing 1.jpg"],
   xac:       ["Xbox Adaptive Controller V&A.JPG"],
   lifestraw: ["Lifestraw - safe drinking water (2722820246).jpg", "LifeStraw use.jpeg"]
-};
+}/*END-PHOTOS*/;
 const fileKey = (n) => encodeURIComponent(n.replace(/ /g, "_"));
-const photoUrl = (n) => `https://commons.wikimedia.org/wiki/Special:FilePath/${fileKey(n)}?width=900`;
+const photoUrl = (n) => LOCAL_PHOTOS[n]?.src || `https://commons.wikimedia.org/wiki/Special:FilePath/${fileKey(n)}?width=900`;
+const creditText = (n) => {
+  const m = LOCAL_PHOTOS[n];
+  return m && m.author ? `Photo: ${m.author}${m.license ? " · " + m.license : ""} ↗` : "Photo: Wikimedia Commons ↗";
+};
 const pageUrl = (n) => `https://commons.wikimedia.org/wiki/File:${fileKey(n)}`;
 
+const esc = (s) => String(s).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
 const $ = (s) => document.querySelector(s);
 const grid = $("#grid"), chips = $("#chips");
 let active = "all";
@@ -542,7 +550,7 @@ function card(it, i) {
   const gallery = ph.length ? `
       <img class="photo" src="${photoUrl(ph[0])}" alt="Photo of ${it.name}" loading="lazy" referrerpolicy="no-referrer" data-i="0">
       ${ph.length > 1 ? `<div class="pics">${ph.map((_, k) => `<button type="button" data-k="${k}" aria-pressed="${k === 0}" aria-label="Show photo ${k + 1} of ${ph.length}">${k + 1}</button>`).join("")}</div>` : ""}
-      <a class="credit" href="${pageUrl(ph[0])}" target="_blank" rel="noopener">Photo: Wikimedia Commons ↗</a>` : "";
+      <a class="credit" href="${pageUrl(ph[0])}" target="_blank" rel="noopener">${esc(creditText(ph[0]))}</a>` : "";
   return `<article class="card" data-id="${it.id}" data-cat="${it.cat}" style="--c:${c.color}">
     <div class="art${ph.length ? " has-photo" : ""}">
       <span class="no">No. ${String(i + 1).padStart(2, "0")}</span>
@@ -578,7 +586,8 @@ function showPhoto(cardEl, k) {
   if (!img || !ph[k]) return;
   img.classList.add("loading");
   img.dataset.i = k; img.src = photoUrl(ph[k]);
-  cardEl.querySelector(".credit").href = pageUrl(ph[k]);
+  const cr = cardEl.querySelector(".credit");
+  cr.href = pageUrl(ph[k]); cr.textContent = creditText(ph[k]);
   cardEl.querySelectorAll(".pics button").forEach((b) => b.setAttribute("aria-pressed", String(+b.dataset.k === k)));
 }
 function dropPhoto(img) {

@@ -2,12 +2,12 @@
 
 A birthday gift for Ayush: 24 cleverly designed physical products, each with the story, the one smart decision behind it, and a lesson to steal. Sources are linked on every card.
 
-It's a single static file (`index.html`), no build step.
+The page is a single file (`index.html`). A small build step (`scripts/build.mjs`, no dependencies) runs on Vercel: it downloads the product photos from Wikimedia Commons into the site, along with each photographer's name and licence.
 
 ## Deploy on Vercel
 1. Go to https://vercel.com/new and import this GitHub repo.
-2. Framework preset: **Other**. Leave build command and output directory empty.
-3. Click **Deploy**.
+2. Framework preset: **Other**. Leave the build settings alone; `vercel.json` sets them.
+3. Click **Deploy**. The build log lists each photo it downloaded.
 
 ## Edit
 - Products live in the `ITEMS` array inside `index.html`.
