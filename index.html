@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ayush's Design Drawer</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="A birthday collection of 24 cleverly designed physical products, made for Ayush.">
-<meta property="og:title" content="Happy Birthday, Ayush — 24 objects worth stealing ideas from">
+<meta name="description" content="A birthday collection of 44 cleverly designed physical products, made for Ayush.">
+<meta property="og:title" content="Happy birthday, Ayush: 44 objects worth stealing ideas from">
 <meta property="og:description" content="A birthday collection of smart product design case studies.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -140,6 +140,21 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .w { fill: var(--card); }
 .k { fill: var(--ink); }
 
+/* ---------- 20 more ideas ---------- */
+.more .wrap { padding-block: 8px 64px; }
+.more-head { display: grid; gap: 12px 40px; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: end; border-top: 2.5px dashed var(--ink); padding-top: 48px; }
+.more-head h2 { font-size: clamp(2rem, 4.4vw, 3.2rem); font-weight: 800; letter-spacing: -.02em; }
+.more-head p { margin: 0; color: var(--ink-soft); max-width: 52ch; }
+.mini-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 28px; }
+.mini { --c: var(--sun); background: var(--card); border: 2px solid var(--ink); border-radius: 18px; padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; border-top: 10px solid var(--c); }
+.mini .top { display: flex; justify-content: space-between; gap: 8px; font: 500 .72rem/1 var(--mono); color: var(--ink-soft); }
+.mini h3 { font-size: 1.2rem; font-weight: 800; }
+.mini .meta { margin-top: -4px; }
+.mini p { margin: 0; font-size: .93rem; }
+.mini p b { font-family: var(--display); font-weight: 800; background: linear-gradient(transparent 60%, color-mix(in srgb, var(--c) 55%, transparent) 60%); }
+.mini .steal { margin-top: auto; font-size: .9rem; padding: 10px 12px; }
+.empty { color: var(--ink-soft); margin: 20px 0 0; }
+
 /* ---------- Lessons strip ---------- */
 .lessons { background: var(--cobalt); color: var(--paper); border-block: 2.5px solid var(--ink); }
 .lessons .wrap { padding-block: 56px; }
@@ -199,13 +214,14 @@ kbd { font: inherit; background: var(--card); border: 1.5px solid var(--ink); bo
   .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .lessons ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .shelf { grid-template-columns: minmax(0, 1fr); max-width: 640px; }
+  .mini-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 760px) {
-  .hero .wrap, .intro .wrap, .quotes-head { grid-template-columns: minmax(0, 1fr); }
+  .hero .wrap, .intro .wrap, .quotes-head, .more-head { grid-template-columns: minmax(0, 1fr); }
   .note { transform: none; }
 }
 @media (max-width: 600px) {
-  .grid, .lessons ol { grid-template-columns: minmax(0, 1fr); }
+  .grid, .lessons ol, .mini-grid { grid-template-columns: minmax(0, 1fr); }
   .stamp { right: 4px; width: 78px; height: 78px; font-size: .8rem; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -218,9 +234,9 @@ kbd { font: inherit; background: var(--card); border: 1.5px solid var(--ink); bo
 <header class="hero">
   <div class="wrap">
     <div>
-      <span class="eyebrow"><span class="dot"></span>A birthday drawer of good ideas</span>
+      <span class="eyebrow"><span class="dot"></span>A birthday gift for Ayush</span>
       <h1>Happy birthday, <span class="name">Ayush</span></h1>
-      <p class="lede">I couldn't fit a whole design museum in a gift box, so I made you this instead: <strong>24 physical products</strong> where one clever decision changed everything. Each one ends with an idea for you to steal.</p>
+      <p class="lede">I couldn't wrap a design museum, so I made you one. Inside are <strong>44 physical products</strong>, each made great by one clever decision. Every one ends with an idea for you to steal.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#collection">Open the drawer ↓</a>
         <a class="btn btn-ghost" href="#quotes">Read the quotes</a>
@@ -229,9 +245,9 @@ kbd { font: inherit; background: var(--card); border: 1.5px solid var(--ink); bo
     </div>
     <aside class="note" aria-label="Birthday note">
       <h2>Dear Ayush,</h2>
-      <p>You notice the things most people walk past: the weight of a handle, the click of a lid, the reason a button sits where it does. That eye is rare. This year, may you design something that makes a stranger smile without knowing why.</p>
-      <p class="sig">Happy birthday! — Jayaraj</p>
-      <div class="cake"><span>Psst: type <kbd>ayush</kbd> anywhere</span><button type="button" id="hint">or tap here</button></div>
+      <p>You notice what most people walk past: the weight of a handle, the click of a lid, the reason a button sits exactly there. Few people have that eye. This year, I hope you make something a stranger loves without knowing why.</p>
+      <p class="sig">Happy birthday, from Jayaraj</p>
+      <div class="cake"><span>Psst: type <kbd>ayush</kbd> on your keyboard</span><button type="button" id="hint">or tap here</button></div>
     </aside>
   </div>
   <div class="ribbon" aria-hidden="true"><div class="ribbon-track" id="ribbon"></div></div>
@@ -243,8 +259,8 @@ kbd { font: inherit; background: var(--card); border: 1.5px solid var(--ink); bo
 
 <section class="intro" id="collection">
   <div class="wrap">
-    <h2>One clever move per object</h2>
-    <p>Each card tells the story of the product, names the single smart decision that made it work, and turns that into a lesson you can use in your own work. Tap a category to narrow it down. Sources are linked on every card.</p>
+    <h2>24 objects, up close</h2>
+    <p>Each card tells you where the product came from, the one decision that made it work, and an idea you can use in your own work. Filter by category above. Every card links to its source.</p>
   </div>
 </section>
 
@@ -252,16 +268,27 @@ kbd { font: inherit; background: var(--card); border: 1.5px solid var(--ink); bo
   <div class="grid" id="grid"></div>
 </main>
 
+<section class="more" id="more" aria-labelledby="more-h">
+  <div class="wrap">
+    <div class="more-head">
+      <h2 id="more-h">20 more ideas</h2>
+      <p>Quicker reads for the margins of your sketchbook. Same format: the clever move, then the idea to steal.</p>
+    </div>
+    <div class="mini-grid" id="mini-grid"></div>
+    <p class="empty" id="more-empty" hidden>No extra ideas in this category yet.</p>
+  </div>
+</section>
+
 <section class="lessons" aria-labelledby="lessons-h">
   <div class="wrap">
-    <h2 id="lessons-h">Six patterns hiding in this drawer</h2>
+    <h2 id="lessons-h">Six patterns that keep showing up</h2>
     <ol>
-      <li><b>Borrow a gesture people already know</b><p>Muji's pull cord, the FlyEase heel kick, Nest's dial. Reuse a motion from somewhere else and nobody needs a manual.</p></li>
-      <li><b>Design for the edge, win the middle</b><p>OXO started with arthritic hands. The Xbox controller started with gamers who play with their feet. Everyone benefits.</p></li>
-      <li><b>Move the heavy part</b><p>Dyson put the motor in the handle. Fellow counterweighted the kettle. Where the mass sits decides how a thing feels.</p></li>
-      <li><b>Make the constraint the feature</b><p>Playdate's 1-bit screen, the Travel Tripod's water-bottle width, Balmuda's 5 cc of water. Limits make products memorable.</p></li>
-      <li><b>Let the object store itself</b><p>The Pencil charges where it parks. The Always Pan holds its own spatula. Good design includes where the thing lives.</p></li>
-      <li><b>Show the inside</b><p>Freitag's scuffed tarps, Fairphone's screws, Nothing's lit-up back. Honesty about how a thing is made can be the whole brand.</p></li>
+      <li><b>Borrow a gesture people know</b><p>Muji's pull cord, the FlyEase heel kick, Nest's turning ring. When the motion is familiar, nobody needs a manual.</p></li>
+      <li><b>Design for the edges</b><p>OXO started with arthritic hands. The Xbox controller started with gamers who play with their feet. What helps them helps everyone.</p></li>
+      <li><b>Move the heavy part</b><p>Dyson put the motor in the handle. Fellow counterweighted the kettle. Where the weight sits decides how a thing feels.</p></li>
+      <li><b>Make the limit the feature</b><p>Playdate's black-and-white screen, the tripod's bottle-sized fold, Balmuda's 5 cc of water. Limits make products memorable.</p></li>
+      <li><b>Give it a home</b><p>The Pencil charges where it rests. The Always Pan holds its own spatula. Good design includes where a thing lives.</p></li>
+      <li><b>Look outside your field</b><p>A woodworking rasp became the Microplane. A sawmill gave Dyson his cyclone. A burr on a dog gave us Velcro. Good ideas travel.</p></li>
     </ol>
   </div>
 </section>
@@ -270,7 +297,7 @@ kbd { font: inherit; background: var(--card); border: 1.5px solid var(--ink); bo
   <div class="wrap">
     <div class="quotes-head">
       <h2 id="quotes-h">Quote collections</h2>
-      <p>Words from Rick Rubin, designers and other makers to keep on the wall next to your sketchbook. Each one links to where it was said.</p>
+      <p>Lines from Rick Rubin, designers and other makers, worth pinning above your desk. Each one names where it was said.</p>
     </div>
     <div class="shelf">
       <section class="coll" style="--c: var(--bubble)" aria-label="Rick Rubin on taste">
@@ -323,9 +350,9 @@ kbd { font: inherit; background: var(--card); border: 1.5px solid var(--ink); bo
     <article class="paper">
       <div class="stamp" aria-hidden="true">Made<br>for<br>Ayush</div>
       <h2>One more thing</h2>
-      <p>None of these products started as a big idea. They started as a small annoyance someone refused to ignore: a peeler that hurt, a thermostat that was ugly, a bag that got wet in the rain.</p>
-      <p>You're good at noticing those small annoyances. Keep a list. Keep sketching. One day a product of yours belongs in a drawer like this, and I get to say I knew you before.</p>
-      <p>Have a brilliant birthday, and a year full of good problems to solve.</p>
+      <p>Almost none of these products started as a big idea. They started with a small annoyance that someone refused to ignore: a peeler that hurt, a thermostat nobody understood, a bag that let the rain in.</p>
+      <p>You're good at spotting those annoyances. Write them down. Keep sketching. One day something you made will belong in a collection like this, and I'll get to say I knew you first.</p>
+      <p>Happy birthday, Ayush. Here's to a year full of good problems.</p>
       <p class="sig">— Jayaraj</p>
     </article>
   </div>
@@ -333,7 +360,7 @@ kbd { font: inherit; background: var(--card); border: 1.5px solid var(--ink); bo
 
 <footer>
   <div class="wrap">
-    <span>Made with care for Ayush's birthday · 24 objects · sources linked on each card</span>
+    <span>Made for Ayush's birthday · 44 objects · sources on every card</span>
     <span>Type <kbd>ayush</kbd> for a surprise</span>
   </div>
 </footer>
@@ -381,130 +408,219 @@ const ART = {
 
 const ITEMS = [
   { id:"oxo", art:"peeler", cat:"kitchen", name:"OXO Good Grips Peeler", maker:"Sam Farber & Smart Design", year:1990,
-    story:"Sam Farber watched his wife Betsey, who had arthritis in her hands, struggle with a thin metal peeler. He worked with Smart Design to rethink the handle from scratch.",
-    smart:"A <b>fat, soft oval handle</b> with fin-like grooves that grips even wet hands. It cost three times a normal peeler and sold anyway.",
-    lesson:"Design for the hardest hand first. If it works for someone with arthritis, it feels great for everyone else.",
+    story:"Sam Farber's wife Betsey had arthritis in her hands, and the metal peeler in their kitchen hurt to hold. Farber asked Smart Design to start again from the handle.",
+    smart:"A <b>fat, soft rubber handle</b> with flexible fins where your fingers rest. It grips even when wet. It cost three times as much as a basic peeler, and people bought it anyway.",
+    lesson:"Design for the hand that struggles most. Everyone else gets a better tool for free.",
     src:"https://www.cooperhewitt.org/2015/12/17/getting-a-grip-on-user-inspired-design/" },
   { id:"balmuda", art:"toaster", cat:"kitchen", name:"BALMUDA The Toaster", maker:"Balmuda (Gen Terao)", year:2015,
-    story:"The team grilled bread at a rainy company barbecue and it came out unusually good. Chasing that taste, they realised the moisture in the air was the missing ingredient.",
-    smart:"A tiny cup takes <b>5 cc of water</b>. Steam coats the bread so the outside crisps while the inside stays soft.",
-    lesson:"Recreate a feeling, not a spec sheet. They designed backwards from one perfect slice of toast.",
+    story:"At a rainy company barbecue, Balmuda's team grilled bread that tasted better than any toast they made at home. They spent months working out why. The answer was the rain.",
+    smart:"You pour <b>5 cc of water</b> into a slot on top. Steam coats the bread, so the outside crisps while the inside stays soft.",
+    lesson:"Start from a moment you want to recreate, then work backwards to the machine.",
     src:"https://www.core77.com/posts/54809/Why-Does-This-Toaster-Have-You-Pour-Water-Into-It" },
   { id:"stagg", art:"kettle", cat:"kitchen", name:"Fellow Stagg EKG", maker:"Fellow, designed with Branch", year:2017,
-    story:"Pour-over coffee needs a slow, steady stream. Most kettles make that hard, and most electric ones look like appliances you hide.",
-    smart:"A <b>counterbalanced handle</b> puts the weight behind your wrist, and a narrow gooseneck spout gives you a thin, controllable pour.",
-    lesson:"Shape the weight, not just the outline. Balance is something people feel before they notice it.",
+    story:"Pour-over coffee needs a slow, thin, steady stream of water. Most kettles splash, and most electric ones look like something to hide in a cupboard.",
+    smart:"The <b>handle is counterbalanced</b>, so the kettle tips forward smoothly instead of lurching. A narrow gooseneck spout does the rest.",
+    lesson:"Decide where the weight sits. People feel balance long before they notice it.",
     src:"https://www.coffeereview.com/equipment-review-fellow-stagg-ekg-electric-kettle/" },
   { id:"ember", art:"mug", cat:"kitchen", name:"Ember Mug", maker:"Clay Alexander", year:2016,
-    story:"An inventor with a background in LED lighting wanted his coffee to stay at the right temperature. The first prototype was a Zojirushi mug stuffed with electronics.",
-    smart:"It <b>looks like a plain mug</b>. The battery and heater hide in the base, and a coaster is the charger.",
-    lesson:"Hide the technology inside a familiar object. People adopt new things faster when they already know how to hold them.",
+    story:"Inventor Clay Alexander, who came from LED lighting, was tired of his coffee going cold. His first prototype was a Zojirushi mug stuffed with electronics.",
+    smart:"It <b>looks like an ordinary mug</b>. The battery and heater hide in the base, and the coaster is the charger.",
+    lesson:"Hide new technology inside a shape people already know how to hold.",
     src:"https://embertech.com/pages/about-the-founder" },
   { id:"always", art:"pan", cat:"kitchen", name:"Our Place Always Pan", maker:"Our Place (Shiza Shahid)", year:2019,
-    story:"Small kitchens fill up with pans that each do one job. Our Place set out to make one pan that covers most of them.",
-    smart:"A deep pan with a steamer basket and lid, plus a wooden spatula with a <b>built-in notch that rests on the handle</b>. Everything nests together.",
-    lesson:"Design the accessories and where they live, not only the hero object.",
+    story:"Small kitchens fill up with pans that each do one job. Our Place set out to cover most of those jobs with one pan.",
+    smart:"It comes with a steamer basket, a lid, and a wooden spatula with a <b>notch that rests on the handle</b>. Everything nests together.",
+    lesson:"Decide where every piece lives. Storage is part of the product.",
     src:"https://globaldesignnews.com/shiza-shahid-brings-a-fresh-perspective-to-cookware-for-the-contemporary-kitchen-with-the-always-pan-that-replaces-eight-kitchen-pieces/" },
 
   { id:"muji", art:"cd", cat:"home", name:"MUJI Wall-Mounted CD Player", maker:"Naoto Fukasawa for MUJI", year:1999,
-    story:"Fukasawa noticed that a spinning CD looks like the blades of a kitchen extractor fan. So he built a CD player that hangs on the wall like one.",
-    smart:"You turn it on by <b>pulling a cord</b>, the same gesture as the fan. Nobody needs to read instructions. MoMA added it to its collection.",
-    lesson:"Borrow a behaviour people already do without thinking. Fukasawa calls this designing \"without thought\".",
+    story:"Naoto Fukasawa noticed that a spinning CD looks like the blades of a kitchen extractor fan. So he made a CD player that hangs on the wall like one.",
+    smart:"You switch it on by <b>pulling a cord</b>, the same way you start the fan. MoMA added it to its collection in 2004.",
+    lesson:"Borrow a gesture people already know. Fukasawa calls this designing \"without thought\".",
     src:"https://collections.vam.ac.uk/item/O1227135/cd-player-fukasawa-naoto/" },
   { id:"nest", art:"nest", cat:"home", name:"Nest Learning Thermostat", maker:"Tony Fadell & Matt Rogers", year:2011,
-    story:"While building a house near Lake Tahoe, the creator of the iPod found every thermostat ugly and confusing. So he started a company to make a better one.",
-    smart:"One <b>turning ring and a round screen</b>. You just turn it up or down, and after about a week it learns your schedule.",
-    lesson:"Take a boring, ignored product category seriously. Low expectations leave lots of room to surprise people.",
+    story:"Tony Fadell, who led the team that made the iPod, was building a house near Lake Tahoe. Every thermostat he found was ugly and hard to program.",
+    smart:"One <b>metal ring you turn</b> and a round screen. Turn it up and down for about a week, and it learns your schedule.",
+    lesson:"Pick a product everyone ignores. Low expectations leave plenty of room to delight people.",
     src:"https://spectrum.ieee.org/the-consumer-electronics-hall-of-fame-nest-thermostat" },
   { id:"symfonisk", art:"lamp", cat:"home", name:"IKEA SYMFONISK Lamp Speaker", maker:"IKEA × Sonos", year:2019,
-    story:"Speakers are black boxes that clutter rooms. IKEA brought the furniture thinking, and Sonos brought the sound.",
-    smart:"The speaker <b>is the lamp base</b>. One object, one cable, one spot on the side table, and it doesn't look like tech.",
-    lesson:"Merge two objects that already sit in the same place. Fewer things in a room is a feature.",
+    story:"Speakers are black boxes that clutter a room. IKEA knew furniture and Sonos knew sound, so they made one together.",
+    smart:"The <b>speaker is the lamp base</b>. One object, one cable, one spot on the side table.",
+    lesson:"Combine two things that already sit in the same place. A room with fewer objects feels calmer.",
     src:"https://www.dezeen.com/2019/04/09/ikea-sonos-symfonisk-speakers/" },
   { id:"supersonic", art:"dryer", cat:"home", name:"Dyson Supersonic", maker:"Dyson", year:2016,
-    story:"Hair dryers were heavy at the head and loud. Dyson spent four years and built around 600 prototypes to rethink one.",
-    smart:"A tiny motor moved <b>into the handle</b>, so the weight sits in your hand. The air comes out of a ring with a hole in the middle.",
-    lesson:"Ask where the heaviest part should live. Moving one component can change the whole shape.",
+    story:"Hair dryers were heavy at the front and loud. Dyson spent four years and built around 600 prototypes to rethink one.",
+    smart:"A tiny motor sits <b>in the handle</b>, so the weight rests in your hand. Air flows out of a ring with a hole in the middle.",
+    lesson:"Ask where the heaviest part should go. Moving one component can change the whole shape.",
     src:"https://newatlas.com/dyson-supersonic-hair-dryer/43019/" },
 
   { id:"op1", art:"op1", cat:"play", name:"Teenage Engineering OP-1", maker:"Teenage Engineering", year:2011,
-    story:"A synthesizer and recorder the size of a keyboard tray, made from one machined piece of aluminium.",
-    smart:"Recording works like <b>a virtual 4-track tape</b> with spinning reels on screen. The odd limits make you finish songs instead of fiddling.",
-    lesson:"Use a metaphor people can see. Personality and humour in an interface make people want to use it.",
+    story:"A synthesizer, sampler and recorder about the size of a keyboard tray, cut from one block of aluminium.",
+    smart:"Recording works like <b>an old 4-track tape machine</b>, with reels spinning on screen. Its limits push you to finish songs.",
+    lesson:"Use a metaphor people can picture. A little humour makes people want to play.",
     src:"https://cdm.link/teenage-engineerings-op-1-instrument-hands-on-videos-why-its-different/" },
   { id:"playdate", art:"playdate", cat:"play", name:"Playdate", maker:"Panic, designed with Teenage Engineering", year:2022,
-    story:"A software company wanted to make a small yellow handheld console. A design firm tried to talk them out of it, so they emailed Teenage Engineering instead.",
-    smart:"A <b>fold-out crank</b> on the side is a real game control, not a charger. Games come with a black-and-white screen and no backlight.",
-    lesson:"One strange, delightful input can be a whole product's identity.",
+    story:"Panic, a software company, wanted to make a small yellow game console. The first design firm they met tried to talk them out of it, so they emailed Teenage Engineering.",
+    smart:"A <b>crank folds out of the side</b>, and games use it as a real control. The black-and-white screen has no backlight and stays readable in sunlight.",
+    lesson:"One odd, delightful control can give a whole product its personality.",
     src:"https://domusweb.it/en/design/gallery/2022/06/24/playdate-a-game-boy-designed-for-the-netflix-era.html" },
   { id:"switch", art:"switch", cat:"play", name:"Nintendo Switch", maker:"Nintendo", year:2017,
-    story:"Wii players asked for smaller controllers they could hold or strap on. Nintendo designed the Joy-Con to be useful well beyond a normal gamepad.",
-    smart:"The controllers <b>slide off the sides</b>. One device becomes a TV console, a handheld, or two controllers for a friend.",
-    lesson:"Design the moment of sharing. Splitting one object into two made multiplayer happen anywhere.",
+    story:"Wii players asked Nintendo for smaller controllers they could hold or strap on. Nintendo designed the Joy-Con to do far more than a normal gamepad.",
+    smart:"The controllers <b>slide off the sides</b>. One device becomes a TV console, a handheld, or two controllers for you and a friend.",
+    lesson:"Design for the moment people share. Splitting one object in two made multiplayer possible anywhere.",
     src:"https://www.gamedeveloper.com/game-platforms/the-nintendo-switch-joy-cons-and-even-labo-are-the-result-of-wii-era-feedback" },
   { id:"pocket", art:"pocketgame", cat:"play", name:"Analogue Pocket", maker:"Analogue", year:2021,
-    story:"Old Game Boy cartridges deserve better than blurry emulators. Analogue rebuilt the original hardware in a reprogrammable chip.",
-    smart:"A <b>615 ppi screen</b>, ten times the original Game Boy's resolution, that plays real cartridges natively.",
+    story:"Old Game Boy cartridges deserve better than blurry emulators. Analogue rebuilt the original hardware on reprogrammable chips.",
+    smart:"A <b>615 ppi screen</b>, ten times the resolution of the original Game Boy, that plays the real cartridges.",
     lesson:"Respect what people already own. A new product can make old things feel new again.",
     src:"https://techcrunch.com/2021/11/22/analogues-pocket-retro-gaming-handheld-console-ships-on-december-14/" },
 
   { id:"tripod", art:"tripod", cat:"carry", name:"Peak Design Travel Tripod", maker:"Peak Design", year:2019,
-    story:"Travel photographers leave tripods at home because they're bulky. Peak Design reshaped every part to remove dead space.",
-    smart:"The legs fold tightly around the centre column so the whole thing is about <b>the width of a water bottle</b> and fits a bottle pocket.",
-    lesson:"Pick a real-world size target. \"Fits where a water bottle fits\" is a clearer brief than \"make it small\".",
+    story:"Travel photographers often leave the tripod at home because it's too bulky. Peak Design reshaped every part to remove wasted space.",
+    smart:"The legs fold tight around the centre column, so the whole thing packs to about <b>the width of a water bottle</b>.",
+    lesson:"Set a real-world size target. \"Fits in a bottle pocket\" is a clearer brief than \"make it small\".",
     src:"https://petapixel.com/2019/05/21/peak-design-made-a-travel-tripod-with-game-changing-compactness" },
   { id:"freitag", art:"bag", cat:"carry", name:"FREITAG F13 Top Cat", maker:"Markus & Daniel Freitag", year:1993,
-    story:"Two brothers in Zurich needed a waterproof messenger bag. They watched trucks roll past their flat and saw the answer on the trucks.",
-    smart:"Made from <b>old truck tarps</b>, bike inner tubes and car seatbelts. Every bag is cut from a different tarp, so no two look alike.",
-    lesson:"Your material choice can be your story. Waste became the most recognisable part of the brand.",
+    story:"Two brothers in Zurich needed a waterproof bag for cycling. Trucks rumbled past their flat every day, covered in exactly the material they needed.",
+    smart:"Each bag is cut from <b>an old truck tarp</b>, edged with bike inner tube and carried on a car seatbelt. No two look alike.",
+    lesson:"Let the material tell the story. Waste became the brand's most recognisable feature.",
     src:"https://production-gcp.moma.org/explore/inside_out/2011/05/19/the-freitag-top-cat-bag-environmentally-responsible-and-good-looking-too/" },
   { id:"flyease", art:"shoe", cat:"carry", name:"Nike GO FlyEase", maker:"Nike (Tobie Hatfield & team)", year:2021,
-    story:"Putting on shoes is hard for many people with disabilities, and annoying for everyone carrying something or in a rush.",
-    smart:"A <b>hinged sole</b> stays open until you step in, then snaps shut. To take it off, push the heel down with your other foot.",
-    lesson:"Copy what people already do. Everyone kicks shoes off at the heel; Nike designed for that move.",
+    story:"Putting on shoes is hard for many people with disabilities, and awkward for anyone holding a baby or a bag.",
+    smart:"A <b>hinged sole</b> stays open until you step in, then closes around your foot. To take it off, press the heel down with your other foot.",
+    lesson:"Design around what people already do. Everyone kicks off their shoes at the heel.",
     src:"https://www.dezeen.com/2021/02/01/nike-go-flyease-trainer-hands-free/" },
 
   { id:"airpods", art:"airpods", cat:"pocket", name:"AirPods & their case", maker:"Apple", year:2016,
     story:"Wireless earbuds used to mean pairing menus and lost buds. Apple made the case the centre of the product.",
-    smart:"The case is the charger, the storage and the pairing step. <b>Open the lid near your phone</b> and it connects. The magnetic snap is fun to fiddle with.",
-    lesson:"The container is part of the experience. Small sounds and snaps build attachment.",
+    smart:"The case stores, charges and pairs them. <b>Open the lid near an iPhone</b> and they connect. The magnetic snap is oddly satisfying.",
+    lesson:"Treat the container as part of the experience. Small sounds and snaps make people attached to things.",
     src:"https://www.apple.com/newsroom/2016/09/apple-reinvents-the-wireless-headphones-with-airpods/" },
   { id:"airtag", art:"airtag", cat:"pocket", name:"AirTag", maker:"Apple", year:2021,
-    story:"Item trackers need their own network of receivers to work. Apple already had one: other people's iPhones nearby.",
-    smart:"A tiny disc with <b>a coin battery you can swap yourself</b>, found by nearby Apple devices without anyone noticing.",
-    lesson:"Use the system around a product. The smartest part of AirTag isn't inside the AirTag.",
+    story:"A tracker needs receivers everywhere to find lost things. Apple already had them: the iPhones in everyone's pockets.",
+    smart:"A small steel disc with <b>a coin battery you replace yourself</b>, found by any Apple device that passes nearby.",
+    lesson:"Look at the system around a product. AirTag's best feature lives outside the AirTag.",
     src:"https://www.apple.com/newsroom/2021/04/apple-introduces-airtag/" },
   { id:"pencil", art:"pencil", cat:"pocket", name:"Apple Pencil (2nd gen)", maker:"Apple", year:2018,
-    story:"The first Pencil charged by plugging into the iPad's port, sticking out awkwardly, and it rolled off tables.",
-    smart:"One <b>flat side</b>: it stops rolling, and it snaps magnetically to the iPad where it charges and pairs.",
-    lesson:"Where something rests should do work. Storage, charging and pairing happen in one gesture.",
+    story:"The first Apple Pencil charged by sticking out of the iPad's port, and it rolled off tables.",
+    smart:"The second version has <b>one flat side</b>. It stops rolling and snaps onto the iPad, which charges and pairs it.",
+    lesson:"Make the resting place do work. Storing, charging and pairing happen in one move.",
     src:"https://www.apple.com/newsroom/2018/10/new-ipad-pro-with-all-screen-design-is-most-advanced-powerful-ipad-ever/" },
   { id:"nothing", art:"phone", cat:"pocket", name:"Nothing Phone (1)", maker:"Nothing", year:2022,
-    story:"Most phones look identical from the back. Nothing wanted a phone you'd recognise from across the room.",
-    smart:"The <b>Glyph lights</b> on the back flash custom patterns for calls and alerts, so you can leave the phone face down and still know who's calling.",
-    lesson:"Give an unused surface a job. The back of a phone was dead space.",
+    story:"From the back, most phones look the same. Nothing wanted a phone you could recognise from across a room.",
+    smart:"The <b>Glyph lights</b> on the back flash patterns for calls and alerts, so you can leave it face down and still know who's calling.",
+    lesson:"Give an unused surface a job. The back of a phone was empty space.",
     src:"https://www.macrumors.com/2022/07/13/nothing-announces-phone-1/" },
   { id:"fairphone", art:"fairphone", cat:"pocket", name:"Fairphone 5", maker:"Fairphone", year:2023,
-    story:"Phones get thrown away when a battery or a port dies. Fairphone designs phones to be fixed by their owners.",
-    smart:"Ten parts, including the screen, battery and cameras, swap out with <b>a standard screwdriver</b>. iFixit gave it 10 out of 10.",
-    lesson:"Design the second life of a product. Repair can be a feature people choose you for.",
+    story:"Phones get thrown away when a battery or a port dies. Fairphone builds phones their owners can fix.",
+    smart:"Ten parts, including the screen, battery and cameras, come out with <b>a standard screwdriver</b>. iFixit gave it 10 out of 10.",
+    lesson:"Design the product's second life. Being easy to fix can be the reason people choose you.",
     src:"https://www.fairphone.com/wp-content/uploads/2023/12/Press_Release_Fairphone5_iFixit.pdf" },
 
   { id:"xac", art:"xac", cat:"everyone", name:"Xbox Adaptive Controller", maker:"Microsoft", year:2018,
-    story:"Standard controllers assume two hands and ten fingers. Microsoft co-designed this one with gamers with limited mobility.",
-    smart:"Two huge buttons and a row of ports to plug in switches you can press with a foot, elbow or chin. Even <b>the box opens with one hand</b> using loops.",
-    lesson:"Accessibility goes all the way to the unboxing. The first experience is opening the package.",
+    story:"Standard controllers assume two hands and ten fingers. Microsoft designed this one with gamers who have limited mobility.",
+    smart:"Two large buttons and a row of ports for switches you can press with a foot, an elbow or your chin. Even <b>the box opens with one hand</b>, using loops.",
+    lesson:"Accessibility starts at the box. The first thing anyone does with a product is open it.",
     src:"https://www.designweek.co.uk/issues/23-29-july-2018/microsoft-has-rethought-its-xbox-packaging-for-disabled-gamers" },
   { id:"lifestraw", art:"straw", cat:"everyone", name:"LifeStraw", maker:"Vestergaard", year:2005,
-    story:"Millions of people only have access to unsafe water. The idea grew out of filters Vestergaard made with the Carter Center to fight Guinea worm.",
-    smart:"A plain plastic tube with <b>no batteries or moving parts</b>. Your own sip pushes water through a fine filter that blocks bacteria and parasites.",
-    lesson:"Remove everything that can break. In hard places, simple beats clever.",
+    story:"Millions of people have only unsafe water to drink. LifeStraw grew out of filters Vestergaard made with the Carter Center to fight Guinea worm disease.",
+    smart:"A plastic tube with <b>no batteries and no moving parts</b>. Sipping pulls water through a filter fine enough to block bacteria and parasites.",
+    lesson:"Remove anything that can break. In tough places, simple beats clever.",
     src:"https://collections.vam.ac.uk/item/O1343888" },
   { id:"embrace", art:"embrace", cat:"everyone", name:"Embrace Infant Warmer", maker:"Jane Chen, Rahul Panicker, Linus Liang & team", year:2008,
-    story:"In a Stanford class on designing for extreme affordability, a team learned that premature babies in rural areas die from cold while incubators cost thousands and need steady power.",
-    smart:"A small sleeping bag with a <b>wax pouch that melts at body temperature</b> and stays warm for hours without electricity.",
-    lesson:"Go see the real context. Visiting rural clinics turned a cheap incubator idea into something very different.",
+    story:"In a Stanford class on design for extreme affordability, a team learned that premature babies in poor rural areas die from cold, while incubators cost thousands and need steady power.",
+    smart:"A small sleeping bag with a <b>wax pouch that melts at body temperature</b> and stays warm for hours, with no electricity.",
+    lesson:"Question the brief. The team was asked for a cheaper incubator and made something better suited to the place.",
     src:"https://stanfordmag.org/contents/baby-it-s-cold-outside" }
+];
+
+// 20 more ideas: shorter cards, no pictures
+const MORE = [
+  { id:"microplane", cat:"kitchen", name:"Microplane Zester", maker:"Grace Manufacturing", year:1994,
+    idea:"It was sold as a woodworking rasp. In 1994 Lorraine Lee borrowed one from her husband's toolbox to zest an orange, and <b>it became a kitchen staple</b>.",
+    lesson:"Watch how people misuse your tools. Your best customers may work in another field.",
+    src:"https://en.wikipedia.org/wiki/Microplane" },
+  { id:"aeropress", cat:"kitchen", name:"AeroPress", maker:"Alan Adler", year:2005,
+    idea:"The inventor of the Aerobie flying ring wanted one good cup of coffee without a drip machine. He made <b>a plunger you press by hand</b>.",
+    lesson:"Outsiders see fresh answers. A toy engineer redesigned coffee.",
+    src:"https://aeropress.com/about/" },
+  { id:"oxocup", cat:"kitchen", name:"OXO Angled Measuring Cup", maker:"Bang Zoom Design & Smart Design for OXO", year:2001,
+    idea:"An <b>angled ramp inside the cup</b> lets you read the measurement from above, so you no longer crouch down to eye level.",
+    lesson:"Watch for awkward postures. Every crouch or squint is a design brief.",
+    src:"https://www.oxo.com/1-cup-angled-measuring-cup.html" },
+
+  { id:"aeron", cat:"home", name:"Herman Miller Aeron", maker:"Bill Stumpf & Don Chadwick", year:1994,
+    idea:"Research into seating for older people led to a <b>breathable mesh</b> instead of foam. The chair comes in three sizes instead of one.",
+    lesson:"Bodies vary. Offering sizes can work better than adding more knobs.",
+    src:"https://metropolismag.com/programs/aeron-chair-1994/" },
+  { id:"lovet", cat:"home", name:"IKEA Lövet Table", maker:"Gillis Lundgren", year:1956,
+    idea:"As the story goes, a table wouldn't fit in a car after a photo shoot, so its legs came off. That became IKEA's <b>flat-pack</b> idea.",
+    lesson:"Design for the trip home as well as the room the thing ends up in.",
+    src:"https://www.dezeen.com/2013/07/22/ikea-revives-three-legged-diy-side-table/" },
+  { id:"snoo", cat:"home", name:"SNOO Smart Sleeper", maker:"Happiest Baby with fuseproject", year:2016,
+    idea:"Microphones hear a baby start to fuss, and the bassinet <b>rocks and shushes a little more</b> until the baby settles.",
+    lesson:"Turn expert knowledge into behaviour. A paediatrician's calming method became a product.",
+    src:"https://fuseproject.com/case-studies/snoo-smart-bassinet/" },
+  { id:"dc01", cat:"home", name:"Dyson DC01", maker:"James Dyson", year:1993,
+    idea:"A sawmill that used a cyclone to pull sawdust from the air inspired a vacuum with <b>no bag to clog</b>. It took 5,127 prototypes.",
+    lesson:"Plan to fail a lot. Dyson counted 5,126 failures before one worked.",
+    src:"https://gizmodo.com/praising-failure-james-dyson-talks-vacuums-5-127-proto-5790556" },
+
+  { id:"walkman", cat:"play", name:"Sony Walkman", maker:"Sony", year:1979,
+    idea:"Made so Sony's co-founder could listen to music on long flights. The first model had <b>two headphone jacks</b> so you could share.",
+    lesson:"Think about the people next to your user too.",
+    src:"https://www.crutchfield.com/S-4EJRtl9Socj/learn/sony-walkman-history.html" },
+  { id:"lego", cat:"play", name:"LEGO Brick", maker:"Godtfred Kirk Christiansen", year:1958,
+    idea:"Adding <b>tubes inside the brick</b> gave it grip. A brick from 1958 still clicks onto one made today.",
+    lesson:"Get the system right and everything built on it keeps working for decades.",
+    src:"https://www.lego.com/en-gb/history/articles/d-the-stud-and-tube-principle" },
+  { id:"sx70", cat:"play", name:"Polaroid SX-70", maker:"Edwin Land", year:1972,
+    idea:"A camera that <b>folds flat enough for a jacket pocket</b> and pushes out a photo that develops in your hand.",
+    lesson:"Shorten the wait between doing and seeing. Instant results feel like magic.",
+    src:"https://www.mikeeckman.com/2021/07/polaroid-sx70-1972/" },
+  { id:"ipod", cat:"play", name:"iPod", maker:"Apple", year:2001,
+    idea:"\"1,000 songs in your pocket\", browsed with <b>a wheel you spin with your thumb</b> to fly through long lists.",
+    lesson:"Match the control to the content. Long lists needed a wheel.",
+    src:"https://en.wikipedia.org/wiki/IPod" },
+
+  { id:"brompton", cat:"carry", name:"Brompton Folding Bike", maker:"Andrew Ritchie", year:1975,
+    idea:"Designed in a London flat overlooking the Brompton Oratory. The wheels <b>fold into the middle</b>, and the bike packs to about a third of its size in under 20 seconds.",
+    lesson:"Make the change fast. A fold that takes a minute won't get used every day.",
+    src:"https://www.jamesdysonfoundation.co.uk/resources/other-engineering-resources/design-icons/design-icons-brompton-bicycle" },
+  { id:"gopro", cat:"carry", name:"GoPro", maker:"Nick Woodman", year:2004,
+    idea:"A surfer strapped a disposable camera to his wrist with a broken leash and rubber bands. GoPro's first product was <b>the strap</b>, sold with a cheap camera.",
+    lesson:"Sometimes the mount is the product. Work out how it's carried before what's inside.",
+    src:"https://spectrum.ieee.org/the-consumer-electronics-hall-of-fame-gopro-hero" },
+  { id:"gogoro", cat:"carry", name:"Gogoro Smartscooter", maker:"Gogoro (Horace Luke)", year:2015,
+    idea:"Electric scooters with batteries you <b>swap at a kiosk in about six seconds</b>, so nobody waits for a charge.",
+    lesson:"If charging is slow, redesign the system around the battery.",
+    src:"https://theindexproject.org/award/nominees/654" },
+
+  { id:"square", cat:"pocket", name:"Square Reader", maker:"Jack Dorsey & Jim McKelvey", year:2010,
+    idea:"Jim McKelvey lost a sale of his glass art because he couldn't take a card. The fix was a tiny square that <b>plugged into a phone's headphone jack</b>.",
+    lesson:"Build on what people already carry. Every phone had a headphone jack.",
+    src:"https://www.moma.org/interactives/exhibitions/2011/talktome/objects/145490/" },
+  { id:"swatch", cat:"pocket", name:"Swatch", maker:"Elmar Mock & Jacques Müller", year:1983,
+    idea:"About 51 parts, against roughly 91 in a typical quartz watch, in a <b>sealed plastic case</b> that machines could assemble.",
+    lesson:"Cut parts to cut cost, then spend the savings on fun.",
+    src:"https://domusweb.it/en/design/2022/03/01/the-case-of-swatch.html" },
+  { id:"kindle", cat:"pocket", name:"Amazon Kindle", maker:"Amazon", year:2007,
+    idea:"An <b>E Ink screen</b> that reads like paper, even in sunlight, with books delivered wirelessly and no computer needed.",
+    lesson:"Keep the best thing about the old medium. Paper was easy on the eyes.",
+    src:"https://en.wikipedia.org/wiki/Amazon_Kindle" },
+
+  { id:"bic", cat:"everyone", name:"BIC Cristal", maker:"Marcel Bich", year:1950,
+    idea:"A <b>clear, six-sided barrel</b> like a pencil, so you can see the ink and the pen doesn't roll. A tiny hole in the barrel keeps the ink flowing.",
+    lesson:"Small details do quiet, important work. Years later, a hole in the cap was added to help prevent choking.",
+    src:"https://www.moma.org/collection/works/82141" },
+  { id:"postit", cat:"everyone", name:"Post-it Note", maker:"Spencer Silver & Art Fry, 3M", year:1980,
+    idea:"A glue too weak for its intended job, plus a choir singer whose bookmarks kept falling out. Together they made <b>a note that sticks and peels off clean</b>.",
+    lesson:"Keep your failed experiments. One may answer a question nobody has asked yet.",
+    src:"https://lemelson.mit.edu/resources/art-fry-spencer-silver" },
+  { id:"velcro", cat:"everyone", name:"Velcro", maker:"George de Mestral", year:1955,
+    idea:"After a walk, de Mestral looked at the burrs stuck to his dog under a microscope and copied their <b>tiny hooks</b>.",
+    lesson:"Nature has already solved a lot of problems. Look closely.",
+    src:"https://en.wikipedia.org/wiki/Hook-and-loop_fastener" }
 ];
 
 // Real photos from Wikimedia Commons (freely licensed). Each links to its file page,
@@ -570,7 +686,21 @@ function card(it, i) {
   </article>`;
 }
 
+function mini(it, i) {
+  const c = CATS[it.cat];
+  return `<article class="mini" style="--c:${c.color}">
+    <div class="top"><span>No. ${ITEMS.length + i + 1}</span><span>${c.label}</span></div>
+    <div><h3>${it.name}</h3><div class="meta">${it.year} · ${it.maker}</div></div>
+    <p>${it.idea}</p>
+    <div class="steal"><span>Steal this, Ayush</span>${it.lesson}</div>
+    <a class="src" href="${it.src}" target="_blank" rel="noopener">Read the source ↗</a>
+  </article>`;
+}
+
 function render() {
+  const more = active === "all" ? MORE : MORE.filter((x) => x.cat === active);
+  $("#mini-grid").innerHTML = more.map((it) => mini(it, MORE.indexOf(it))).join("");
+  $("#more-empty").hidden = more.length > 0;
   const list = active === "all" ? ITEMS : ITEMS.filter((x) => x.cat === active);
   grid.innerHTML = list.map((it) => card(it, ITEMS.indexOf(it))).join("");
   grid.querySelectorAll(".photo").forEach((img) => {
@@ -611,8 +741,8 @@ grid.addEventListener("click", (e) => {
 
 function renderChips() {
   const counts = {};
-  ITEMS.forEach((x) => (counts[x.cat] = (counts[x.cat] || 0) + 1));
-  const all = `<button class="chip" type="button" data-cat="all" aria-pressed="${active === "all"}">Everything <span class="n">${ITEMS.length}</span></button>`;
+  [...ITEMS, ...MORE].forEach((x) => (counts[x.cat] = (counts[x.cat] || 0) + 1));
+  const all = `<button class="chip" type="button" data-cat="all" aria-pressed="${active === "all"}">Everything <span class="n">${ITEMS.length + MORE.length}</span></button>`;
   chips.innerHTML = all + Object.entries(CATS).map(([k, c]) =>
     `<button class="chip" type="button" data-cat="${k}" aria-pressed="${active === k}"><span class="sw" style="background:${c.color}"></span>${c.label} <span class="n">${counts[k]}</span></button>`
   ).join("");
@@ -626,7 +756,7 @@ chips.addEventListener("click", (e) => {
 });
 
 // Ribbon of product names
-const names = ITEMS.map((x) => `${x.name}<i></i>`).join("");
+const names = [...ITEMS, ...MORE].map((x) => `${x.name}<i></i>`).join("");
 $("#ribbon").innerHTML = `<span>${names}</span><span>${names}</span>`;
 
 renderChips(); render();
@@ -673,13 +803,13 @@ function toast(html) {
 
 $("#party").addEventListener("click", () => {
   burst(200);
-  toast("🎂 Make a wish, <b>Ayush</b>. Then go design something great.");
+  toast("Make a wish, <b>Ayush</b>. Then go design something great.");
 });
 
 // Easter egg: type "ayush"
 const SECRET = [
-  "Secret unlocked: <b>Ayush</b> is officially product no. 25. Limited edition, no returns.",
-  "Fun fact: the best designers are <b>curious first</b>. You've always been that.",
+  "Secret unlocked: <b>Ayush</b> is officially object no. 45. Limited edition. No returns.",
+  "The best designers are <b>curious first</b>. You've always been that.",
   "Still here? Go eat cake, <b>Ayush</b>. The products will wait."
 ];
 let buf = "", hits = 0;
