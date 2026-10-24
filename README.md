@@ -11,5 +11,7 @@ It's a single static file (`index.html`), no build step.
 
 ## Edit
 - Products live in the `ITEMS` array inside `index.html`.
+- Product photos are freely licensed images from Wikimedia Commons, listed in the `PHOTOS` map. Each photo links to its Commons page, which credits the photographer and licence. If a photo fails to load, the card shows its drawing instead.
+- The quote collections are plain HTML in the `#quotes` section.
 - The birthday note and closing letter are plain HTML near the top and bottom of the file.
 - Easter egg: type `ayush` anywhere on the page.
