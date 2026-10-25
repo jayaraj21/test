@@ -1,6 +1,6 @@
-# Ayush's Design Drawer
+# AAyush's Design Drawer
 
-A birthday gift for Ayush: 44 cleverly designed physical products, each with the story, the one smart decision behind it, and a lesson to steal. Sources are linked on every card.
+A birthday gift for AAyush: 44 cleverly designed physical products, each with the story, the one smart decision behind it, and a lesson to steal. Sources are linked on every card.
 
 The page is a single file (`index.html`). A small build step (`scripts/build.mjs`, no dependencies) runs on Vercel: it downloads the product photos from Wikimedia Commons into the site, along with each photographer's name and licence.
 
@@ -14,4 +14,4 @@ The page is a single file (`index.html`). A small build step (`scripts/build.mjs
 - Product photos are freely licensed images from Wikimedia Commons, listed in the `PHOTOS` map. Each photo links to its Commons page, which credits the photographer and licence. If a photo fails to load, the card shows its drawing instead.
 - The quote collections are plain HTML in the `#quotes` section.
 - The birthday note and closing letter are plain HTML near the top and bottom of the file.
-- Easter egg: type `ayush` anywhere on the page.
+- Easter egg: type `aayush` anywhere on the page.

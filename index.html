@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Ayush's Design Drawer</title>
+<title>AAyush's Design Drawer</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="A birthday collection of 44 cleverly designed physical products, made for Ayush.">
-<meta property="og:title" content="Happy birthday, Ayush: 44 objects worth stealing ideas from">
+<meta name="description" content="A birthday collection of 44 cleverly designed physical products, made for AAyush.">
+<meta property="og:title" content="Happy birthday, AAyush: 44 objects worth stealing ideas from">
 <meta property="og:description" content="A birthday collection of smart product design case studies.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -234,8 +234,8 @@ kbd { font: inherit; background: var(--card); border: 1.5px solid var(--ink); bo
 <header class="hero">
   <div class="wrap">
     <div>
-      <span class="eyebrow"><span class="dot"></span>A birthday gift for Ayush</span>
-      <h1>Happy birthday, <span class="name">Ayush</span></h1>
+      <span class="eyebrow"><span class="dot"></span>A birthday gift for AAyush</span>
+      <h1>Happy birthday, <span class="name">AAyush</span></h1>
       <p class="lede">I couldn't wrap a design museum, so I made you one. Inside are <strong>44 physical products</strong>, each made great by one clever decision. Every one ends with an idea for you to steal.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#collection">Open the drawer ↓</a>
@@ -244,10 +244,10 @@ kbd { font: inherit; background: var(--card); border: 1.5px solid var(--ink); bo
       </div>
     </div>
     <aside class="note" aria-label="Birthday note">
-      <h2>Dear Ayush,</h2>
+      <h2>Dear AAyush,</h2>
       <p>You notice what most people walk past: the weight of a handle, the click of a lid, the reason a button sits exactly there. Few people have that eye. This year, I hope you make something a stranger loves without knowing why.</p>
       <p class="sig">Happy birthday, from Jayaraj</p>
-      <div class="cake"><span>Psst: type <kbd>ayush</kbd> on your keyboard</span><button type="button" id="hint">or tap here</button></div>
+      <div class="cake"><span>Psst: type <kbd>aayush</kbd> on your keyboard</span><button type="button" id="hint">or tap here</button></div>
     </aside>
   </div>
   <div class="ribbon" aria-hidden="true"><div class="ribbon-track" id="ribbon"></div></div>
@@ -348,11 +348,11 @@ kbd { font: inherit; background: var(--card); border: 1.5px solid var(--ink); bo
 <section class="letter" id="letter">
   <div class="wrap">
     <article class="paper">
-      <div class="stamp" aria-hidden="true">Made<br>for<br>Ayush</div>
+      <div class="stamp" aria-hidden="true">Made<br>for<br>AAyush</div>
       <h2>One more thing</h2>
       <p>Almost none of these products started as a big idea. They started with a small annoyance that someone refused to ignore: a peeler that hurt, a thermostat nobody understood, a bag that let the rain in.</p>
       <p>You're good at spotting those annoyances. Write them down. Keep sketching. One day something you made will belong in a collection like this, and I'll get to say I knew you first.</p>
-      <p>Happy birthday, Ayush. Here's to a year full of good problems.</p>
+      <p>Happy birthday, AAyush. Here's to a year full of good problems.</p>
       <p class="sig">— Jayaraj</p>
     </article>
   </div>
@@ -360,8 +360,8 @@ kbd { font: inherit; background: var(--card); border: 1.5px solid var(--ink); bo
 
 <footer>
   <div class="wrap">
-    <span>Made for Ayush's birthday · 44 objects · sources on every card</span>
-    <span>Type <kbd>ayush</kbd> for a surprise</span>
+    <span>Made for AAyush's birthday · 44 objects · sources on every card</span>
+    <span>Type <kbd>aayush</kbd> for a surprise</span>
   </div>
 </footer>
 
@@ -680,7 +680,7 @@ function card(it, i) {
       </div>
       <p>${it.story}</p>
       <p class="smart">${it.smart}</p>
-      <div class="steal"><span>Steal this, Ayush</span>${it.lesson}</div>
+      <div class="steal"><span>Steal this, AAyush</span>${it.lesson}</div>
       <a class="src" href="${it.src}" target="_blank" rel="noopener">Read the source ↗</a>
     </div>
   </article>`;
@@ -692,7 +692,7 @@ function mini(it, i) {
     <div class="top"><span>No. ${ITEMS.length + i + 1}</span><span>${c.label}</span></div>
     <div><h3>${it.name}</h3><div class="meta">${it.year} · ${it.maker}</div></div>
     <p>${it.idea}</p>
-    <div class="steal"><span>Steal this, Ayush</span>${it.lesson}</div>
+    <div class="steal"><span>Steal this, AAyush</span>${it.lesson}</div>
     <a class="src" href="${it.src}" target="_blank" rel="noopener">Read the source ↗</a>
   </article>`;
 }
@@ -803,14 +803,14 @@ function toast(html) {
 
 $("#party").addEventListener("click", () => {
   burst(200);
-  toast("Make a wish, <b>Ayush</b>. Then go design something great.");
+  toast("Make a wish, <b>AAyush</b>. Then go design something great.");
 });
 
-// Easter egg: type "ayush"
+// Easter egg: type "aayush"
 const SECRET = [
-  "Secret unlocked: <b>Ayush</b> is officially object no. 45. Limited edition. No returns.",
+  "Secret unlocked: <b>AAyush</b> is officially object no. 45. Limited edition. No returns.",
   "The best designers are <b>curious first</b>. You've always been that.",
-  "Still here? Go eat cake, <b>Ayush</b>. The products will wait."
+  "Still here? Go eat cake, <b>AAyush</b>. The products will wait."
 ];
 let buf = "", hits = 0;
 function egg() {
@@ -819,8 +819,8 @@ function egg() {
 }
 addEventListener("keydown", (e) => {
   if (e.key.length !== 1) return;
-  buf = (buf + e.key.toLowerCase()).slice(-5);
-  if (buf === "ayush") { egg(); buf = ""; }
+  buf = (buf + e.key.toLowerCase()).slice(-6);
+  if (buf === "aayush") { egg(); buf = ""; }
 });
 $("#hint").addEventListener("click", egg);
 
