@@ -1,6 +1,6 @@
-# AAyush's Design Drawer
+# Aayush's Design Drawer
 
-A birthday gift for AAyush: 44 cleverly designed physical products, each with the story, the one smart decision behind it, and a lesson to steal. Sources are linked on every card.
+A birthday gift for Aayush: 44 cleverly designed physical products, each with the story, the one smart decision behind it, and a lesson to steal. Sources are linked on every card.
 
 The page is a single file (`index.html`). A small build step (`scripts/build.mjs`, no dependencies) runs on Vercel: it downloads the product photos from Wikimedia Commons into the site, along with each photographer's name and licence.
 
