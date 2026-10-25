@@ -76,7 +76,7 @@ a { color: inherit; }
 .note p { margin: 10px 0 0; color: var(--ink-soft); }
 .note .sig { font-family: var(--display); font-weight: 600; color: var(--ink); margin-top: 14px; }
 .cake { font: 500 .75rem/1.4 var(--mono); color: var(--ink-soft); margin-top: 16px; padding-top: 14px; border-top: 2px dashed var(--line); display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
-.cake button { font: inherit; background: none; border: 0; padding: 0; color: var(--cobalt); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.cake button { padding: 10px 0 !important; margin: -10px 0; font: inherit; background: none; border: 0; padding: 0; color: var(--cobalt); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
 
 /* Ribbon ticker */
 .ribbon { background: var(--ink); color: var(--paper); overflow: hidden; border-block: 2.5px solid var(--ink); }
@@ -131,7 +131,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .card .smart b { font-family: var(--display); font-weight: 800; color: var(--ink); background: linear-gradient(transparent 60%, color-mix(in srgb, var(--c) 55%, transparent) 60%); }
 .steal { margin-top: auto; background: var(--paper); border: 2px dashed var(--ink); border-radius: 14px; padding: 12px 14px; font-size: .95rem; }
 .steal span { display: block; font: 500 .7rem/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--tomato); margin-bottom: 6px; }
-.src { font: 500 .74rem/1 var(--mono); color: var(--ink-soft); text-decoration-color: var(--line); text-underline-offset: 3px; }
+.src { font: 500 .74rem/1 var(--mono); color: var(--ink-soft); text-decoration-color: var(--line); text-underline-offset: 3px; display: inline-block; align-self: flex-start; padding-block: 12px; margin-block: -8px; }
 .src:hover { color: var(--cobalt); }
 
 /* SVG glyph defaults */
@@ -149,7 +149,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .mini { --c: var(--sun); background: var(--card); border: 2px solid var(--ink); border-radius: 18px; padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; border-top: 10px solid var(--c); }
 .mini .top { display: flex; justify-content: space-between; gap: 8px; font: 500 .72rem/1 var(--mono); color: var(--ink-soft); }
 .mini h3 { font-size: 1.2rem; font-weight: 800; }
-.mini .meta { margin-top: -4px; }
+.mini .meta { margin-top: 4px; }
 .mini p { margin: 0; font-size: .93rem; }
 .mini p b { font-family: var(--display); font-weight: 800; background: linear-gradient(transparent 60%, color-mix(in srgb, var(--c) 55%, transparent) 60%); }
 .mini .steal { margin-top: auto; font-size: .9rem; padding: 10px 12px; }
@@ -222,6 +222,11 @@ kbd { font: inherit; background: var(--card); border: 1.5px solid var(--ink); bo
 }
 @media (max-width: 600px) {
   .grid, .lessons ol, .mini-grid { grid-template-columns: minmax(0, 1fr); }
+  .card .art { aspect-ratio: 16 / 10; }
+  .card .art svg { width: 38%; }
+  .pics button { width: 36px; height: 36px; }
+  .credit { padding: 9px 10px; }
+  .filters .wrap { -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); }
   .stamp { right: 4px; width: 78px; height: 78px; font-size: .8rem; }
 }
 @media (prefers-reduced-motion: reduce) {
