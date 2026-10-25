@@ -325,7 +325,7 @@ kbd { font: inherit; background: var(--card); border: 1.5px solid var(--ink); bo
           <li><blockquote>We're surrounded by anonymous, poorly made objects.</blockquote>
             <div class="who"><b>Jony Ive</b>, on why care shows · <a href="https://www.engadget.com/2014-03-16-jonathan-ive-apple-interview.html" target="_blank" rel="noopener">Sunday Times, 2014 ↗</a></div></li>
           <li><blockquote>Design dissolving in behavior.</blockquote>
-            <div class="who"><b>Naoto Fukasawa</b>, designer of No. 06 · <a href="https://metropolismag.com/programs/without-thought/" target="_blank" rel="noopener">“Without Thought” ↗</a></div></li>
+            <div class="who"><b>Naoto Fukasawa</b>, designer of the MUJI CD player · <a href="https://metropolismag.com/programs/without-thought/" target="_blank" rel="noopener">“Without Thought” ↗</a></div></li>
         </ul>
       </section>
       <section class="coll" style="--c: var(--mint)" aria-label="Makers on limits and mistakes">
@@ -647,6 +647,9 @@ const PHOTOS = /*PHOTOS*/{
   xac:       ["Xbox Adaptive Controller V&A.JPG"],
   lifestraw: ["Lifestraw - safe drinking water (2722820246).jpg", "LifeStraw use.jpeg"]
 }/*END-PHOTOS*/;
+// Show products that have photos first; the rest keep their order after them.
+ITEMS.sort((x, y) => (PHOTOS[y.id] ? 1 : 0) - (PHOTOS[x.id] ? 1 : 0));
+
 const fileKey = (n) => encodeURIComponent(n.replace(/ /g, "_"));
 const photoUrl = (n) => LOCAL_PHOTOS[n]?.src || `https://commons.wikimedia.org/wiki/Special:FilePath/${fileKey(n)}?width=900`;
 const creditText = (n) => {
